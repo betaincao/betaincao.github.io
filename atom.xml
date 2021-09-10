@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://betaincao.github.io/</id>
     <title>BetainCao</title>
-    <updated>2021-09-09T08:02:13.941Z</updated>
+    <updated>2021-09-10T08:38:50.280Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://betaincao.github.io/"/>
     <link rel="self" href="https://betaincao.github.io/atom.xml"/>
@@ -10,6 +10,13 @@
     <logo>https://betaincao.github.io/images/avatar.png</logo>
     <icon>https://betaincao.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, BetainCao</rights>
+    <entry>
+        <title type="html"><![CDATA[写个社招的面经吧]]></title>
+        <id>https://betaincao.github.io/post/2021-09-09/</id>
+        <link href="https://betaincao.github.io/post/2021-09-09/">
+        </link>
+        <updated>2021-09-09T08:16:34.000Z</updated>
+    </entry>
     <entry>
         <title type="html"><![CDATA[容器与镜像]]></title>
         <id>https://betaincao.github.io/post/rong-qi-yu-jing-xiang/</id>
