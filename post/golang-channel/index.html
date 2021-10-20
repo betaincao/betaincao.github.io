@@ -3,7 +3,7 @@
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>golang - channel | BetainCao</title>
-<link rel="shortcut icon" href="https://betaincao.github.io//favicon.ico?v=1634699567743">
+<link rel="shortcut icon" href="https://betaincao.github.io//favicon.ico?v=1634720099077">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://betaincao.github.io//styles/main.css">
 <link rel="alternate" type="application/atom+xml" title="golang - channel | BetainCao - Atom Feed" href="https://betaincao.github.io//atom.xml">
@@ -27,7 +27,7 @@ channel的特性
       <div class="main-content">
         <div class="site-header">
   <a href="https://betaincao.github.io/">
-  <img class="avatar" src="https://betaincao.github.io//images/avatar.png?v=1634699567743" alt="">
+  <img class="avatar" src="https://betaincao.github.io//images/avatar.png?v=1634720099077" alt="">
   </a>
   <h1 class="site-title">
     BetainCao
@@ -91,7 +91,7 @@ channel的特性
                 2021-08-25
               </span>
               <span>
-                1 min read
+                2 min read
               </span>
               
                 <a href="https://betaincao.github.io/tag/golang/" class="post-tag">
@@ -110,6 +110,21 @@ channel的特性
 <p>1、context<br>
 2、done channel</p>
 <h2 id="有缓存无缓存管道">有缓存&amp;无缓存管道</h2>
+<p>无缓存channel实际上可以看做是一种同步模式，有缓存的channel可以看做是异步模式。<br>
+在同步模式下，发送方和接收方要同步就绪，只有两者都ready的情况下，数据才能在两者间传递（实际是内存拷贝）。<br>
+在异步模式下，在缓冲区可用的情况下（有剩余容量），发送方和接收方都可以顺序运行。<br>
+同步模式下，必须要发送方和接收方配对，操作才能成功，否则会被阻塞；异步模式下，缓冲槽要有剩余容量，操作才能成功，否则也会阻塞。</p>
+<p>注：函数间传递chan时，直接传递channel，不用传递channel的指针。</p>
+<h2 id="channel的底层实现原理">channel的底层实现原理</h2>
+<p>我们先看一个简单地小demo：</p>
+<pre><code class="language-golang"> package main
+
+ func main() {
+     ch := make(chan struct{})
+     ch &lt;- struct{}{}
+ }
+</code></pre>
+<p>创建了一个无缓冲channel，然后往这个channel发送数据。因为程序中没有读操作ready，所以发送的时候会阻塞。</p>
 
               </div>
               <div class="toc-container">
@@ -119,6 +134,7 @@ channel的特性
 <li><a href="#channel%E7%9A%84%E7%89%B9%E6%80%A7">channel的特性</a></li>
 <li><a href="#%E5%85%B3%E9%97%ADchannel%E7%9A%84%E6%96%B9%E5%BC%8F">关闭channel的方式</a></li>
 <li><a href="#%E6%9C%89%E7%BC%93%E5%AD%98%E6%97%A0%E7%BC%93%E5%AD%98%E7%AE%A1%E9%81%93">有缓存&amp;无缓存管道</a></li>
+<li><a href="#channel%E7%9A%84%E5%BA%95%E5%B1%82%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86">channel的底层实现原理</a></li>
 </ul>
 </li>
 </ul>
