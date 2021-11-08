@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://betaincao.github.io/</id>
     <title>BetainCao</title>
-    <updated>2021-10-25T01:48:16.875Z</updated>
+    <updated>2021-11-08T08:16:17.830Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://betaincao.github.io/"/>
     <link rel="self" href="https://betaincao.github.io/atom.xml"/>
@@ -10,6 +10,13 @@
     <logo>https://betaincao.github.io/images/avatar.png</logo>
     <icon>https://betaincao.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, BetainCao</rights>
+    <entry>
+        <title type="html"><![CDATA[编写自定义的kubernetes controller]]></title>
+        <id>https://betaincao.github.io/post/bian-xie-zi-ding-yi-de-kubernetes-controller/</id>
+        <link href="https://betaincao.github.io/post/bian-xie-zi-ding-yi-de-kubernetes-controller/">
+        </link>
+        <updated>2021-11-08T08:09:16.000Z</updated>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Hello，1024]]></title>
         <id>https://betaincao.github.io/post/hello1024/</id>
