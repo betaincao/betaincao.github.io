@@ -3,7 +3,7 @@
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>编写自定义的kubernetes controller | BetainCao</title>
-<link rel="shortcut icon" href="https://betaincao.github.io//favicon.ico?v=1636359373055">
+<link rel="shortcut icon" href="https://betaincao.github.io//favicon.ico?v=1636527928242">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://betaincao.github.io//styles/main.css">
 <link rel="alternate" type="application/atom+xml" title="编写自定义的kubernetes controller | BetainCao - Atom Feed" href="https://betaincao.github.io//atom.xml">
@@ -12,7 +12,9 @@
 
 
     <meta name="description" content="当我们需要监控某个资源的变化并做一些列的操作时，使用k8s提供的controller机制来实现，k8s官方提供了提个通用库client-go。
-" />
+
+如上图所示，图中包含了client-go与controller的整个交互过程。
+..." />
     <meta name="keywords" content="kubernetes,golang" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
     <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
@@ -22,7 +24,7 @@
       <div class="main-content">
         <div class="site-header">
   <a href="https://betaincao.github.io/">
-  <img class="avatar" src="https://betaincao.github.io//images/avatar.png?v=1636359373055" alt="">
+  <img class="avatar" src="https://betaincao.github.io//images/avatar.png?v=1636527928242" alt="">
   </a>
   <h1 class="site-title">
     BetainCao
@@ -101,7 +103,9 @@
             
             <div class="post-content-wrapper">
               <div class="post-content">
-                <p>当我们需要监控某个资源的变化并做一些列的操作时，使用k8s提供的controller机制来实现，k8s官方提供了提个通用库client-go。</p>
+                <p>当我们需要监控某个资源的变化并做一些列的操作时，使用k8s提供的controller机制来实现，k8s官方提供了提个通用库client-go。<br>
+<img src="https://betaincao.github.io//post-images/1636359463968.jpeg" alt="" loading="lazy"><br>
+如上图所示，图中包含了client-go与controller的整个交互过程。</p>
 
               </div>
               <div class="toc-container">
