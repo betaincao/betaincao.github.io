@@ -2,20 +2,21 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>编写自定义的kubernetes controller | BetainCao</title>
+<title>docker lifetime | BetainCao</title>
 <link rel="shortcut icon" href="https://betaincao.github.io//favicon.ico?v=1637044205133">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://betaincao.github.io//styles/main.css">
-<link rel="alternate" type="application/atom+xml" title="编写自定义的kubernetes controller | BetainCao - Atom Feed" href="https://betaincao.github.io//atom.xml">
+<link rel="alternate" type="application/atom+xml" title="docker lifetime | BetainCao - Atom Feed" href="https://betaincao.github.io//atom.xml">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
 
-    <meta name="description" content="当我们需要监控某个资源的变化并做一些列的操作时，使用k8s提供的controller机制来实现，k8s官方提供了提个通用库client-go。
+    <meta name="description" content="直接上图：
 
-如上图所示，图中包含了client-go与controller的整个交互过程。
-..." />
-    <meta name="keywords" content="kubernetes,golang" />
+解读：
+1、容器状态（上图中带颜色的圆圈）：Created，Running，Paused，Stopped，Deleted；
+2、Docker命令：docker run，docker create，docker stop，doc..." />
+    <meta name="keywords" content="" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
     <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
   </head>
@@ -81,31 +82,43 @@
         <div class="post-detail">
           <article class="post">
             <h2 class="post-title">
-              编写自定义的kubernetes controller
+              docker lifetime
             </h2>
             <div class="post-info">
               <span>
-                2021-11-08
+                2021-11-16
               </span>
               <span>
-                1 min read
+                2 min read
               </span>
-              
-                <a href="https://betaincao.github.io/tag/kubernetes/" class="post-tag">
-                  # kubernetes
-                </a>
-              
-                <a href="https://betaincao.github.io/tag/golang/" class="post-tag">
-                  # golang
-                </a>
               
             </div>
             
             <div class="post-content-wrapper">
               <div class="post-content">
-                <p>当我们需要监控某个资源的变化并做一些列的操作时，使用k8s提供的controller机制来实现，k8s官方提供了提个通用库client-go。<br>
-<img src="https://betaincao.github.io//post-images/1636359463968.jpeg" alt="" loading="lazy"><br>
-如上图所示，图中包含了client-go与controller的整个交互过程。</p>
+                <p>直接上图：<br>
+<img src="https://betaincao.github.io//post-images/1637043469549.png" alt="" loading="lazy"><br>
+解读：<br>
+1、容器状态（上图中带颜色的圆圈）：Created，Running，Paused，Stopped，Deleted；<br>
+2、Docker命令：docker run，docker create，docker stop，docker rm，docker pause，docker kill，docker unpause等；<br>
+3、docker相关事件（上图中的矩形框）：create，start，die，stop，OOM等；<br>
+4、重启策略判断条件：根据重启策略（restart policy）判断是否需要重启容器</p>
+<p>##第一条路径：<br>
+<img src="https://betaincao.github.io//post-images/1637043979518.png" alt="" loading="lazy"><br>
+如上图所示:<br>
+1、我们先通过 docker run 命令，直接创建（ create ）并启动（ start ）一个容器，进入到运行状态（ Running ）<br>
+2、然后程序运行结束（例如输出 Hello World 之后，或者通过 Ctrl + C 使得程序终止），容器死亡（ die ）<br>
+3、由于我们没有设置重启策略，所以直接进入到停止状态（ Stopped ）<br>
+4、最后通过 docker rm 命令销毁容器，进入到被删除状态（ Deleted ）</p>
+<p>##第二条路径：<br>
+<img src="https://betaincao.github.io//post-images/1637044084057.png" alt="" loading="lazy"><br>
+如上图所示：<br>
+1、我们还是通过 docker run 命令，直接创建（ create ）并启动（ start ）一个容器，进入到运行状态（ Running ）<br>
+2、然后通过 docker stop 命令杀死容器中的程序（ die ）并停止（ stop ）容器，最终进入到停止状态（ Stopped ）<br>
+3、最后通过 docker rm 命令销毁容器，进入到被删除状态（ Deleted ）</p>
+<p>###tips:<br>
+docker stop与docker kill 区别：<br>
+kill 命令向容器内运行的程序直接发出 SIGKILL 信号（或其他指定信号），而 stop 则是先发出 SIGTERM 再发出 SIGKILL 信号，属于优雅关闭（ Graceful Shutdown ）。推荐使用docker stop。</p>
 
               </div>
               <div class="toc-container">
@@ -118,9 +131,9 @@
         
           <div class="next-post">
             <div class="next">下一篇</div>
-            <a href="https://betaincao.github.io/post/hello1024/">
+            <a href="https://betaincao.github.io/post/bian-xie-zi-ding-yi-de-kubernetes-controller/">
               <h3 class="post-title">
-                Hello，1024
+                编写自定义的kubernetes controller
               </h3>
             </a>
           </div>
