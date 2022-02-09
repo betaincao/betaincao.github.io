@@ -2,14 +2,14 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://betaincao.github.io/</id>
     <title>BetainCao</title>
-    <updated>2021-11-19T07:05:48.353Z</updated>
+    <updated>2022-02-09T08:34:11.783Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://betaincao.github.io/"/>
     <link rel="self" href="https://betaincao.github.io/atom.xml"/>
     <subtitle>Talk is cheap, show me the code！</subtitle>
     <logo>https://betaincao.github.io/images/avatar.png</logo>
     <icon>https://betaincao.github.io/favicon.ico</icon>
-    <rights>All rights reserved 2021, BetainCao</rights>
+    <rights>All rights reserved 2022, BetainCao</rights>
     <entry>
         <title type="html"><![CDATA[docker lifetime]]></title>
         <id>https://betaincao.github.io/post/docker-lifetime/</id>
