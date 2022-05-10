@@ -3,7 +3,7 @@
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>使用github action完成项目的CI/CD | BetainCao</title>
-<link rel="shortcut icon" href="https://betaincao.github.io//favicon.ico?v=1652177486481">
+<link rel="shortcut icon" href="https://betaincao.github.io//favicon.ico?v=1652178193506">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://betaincao.github.io//styles/main.css">
 <link rel="alternate" type="application/atom+xml" title="使用github action完成项目的CI/CD | BetainCao - Atom Feed" href="https://betaincao.github.io//atom.xml">
@@ -22,7 +22,7 @@
       <div class="main-content">
         <div class="site-header">
   <a href="https://betaincao.github.io/">
-  <img class="avatar" src="https://betaincao.github.io//images/avatar.png?v=1652177486481" alt="">
+  <img class="avatar" src="https://betaincao.github.io//images/avatar.png?v=1652178193506" alt="">
   </a>
   <h1 class="site-title">
     BetainCao
@@ -101,7 +101,7 @@
 现在可以使用github action持续集成服务自动构建发布镜像到dockerhub，这里记录一下怎么使用github action去做自动构建推送镜像。</p>
 <h4 id="配置github-action的workflow">配置github action的workflow</h4>
 <p>首先项目目录中需要有编写好的dockerfile，然后给项目新建.github/workflows/build-docker-image.yml文件，</p>
-<pre><code class="language-sh"># docker-image.yml
+<pre><code class="language-sh"># build-docker-image.yml
 name: Publish Docker image   # workflow名称，可以在Github项目主页的【Actions】中看到所有的workflow
 
 on:   # 配置触发workflow的事件
