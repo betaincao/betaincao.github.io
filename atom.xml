@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://betaincao.github.io/</id>
     <title>BetainCao</title>
-    <updated>2022-02-09T08:38:36.208Z</updated>
+    <updated>2022-05-10T06:18:47.252Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://betaincao.github.io/"/>
     <link rel="self" href="https://betaincao.github.io/atom.xml"/>
@@ -10,6 +10,20 @@
     <logo>https://betaincao.github.io/images/avatar.png</logo>
     <icon>https://betaincao.github.io/favicon.ico</icon>
     <rights>All rights reserved 2022, BetainCao</rights>
+    <entry>
+        <title type="html"><![CDATA[使用github action完成项目的CI/CD]]></title>
+        <id>https://betaincao.github.io/post/shi-yong-github-action-wan-cheng-xiang-mu-de-cicd/</id>
+        <link href="https://betaincao.github.io/post/shi-yong-github-action-wan-cheng-xiang-mu-de-cicd/">
+        </link>
+        <updated>2022-05-10T03:35:44.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[git rebase]]></title>
+        <id>https://betaincao.github.io/post/git-rebase/</id>
+        <link href="https://betaincao.github.io/post/git-rebase/">
+        </link>
+        <updated>2022-05-10T03:35:28.000Z</updated>
+    </entry>
     <entry>
         <title type="html"><![CDATA[docker lifetime]]></title>
         <id>https://betaincao.github.io/post/docker-lifetime/</id>

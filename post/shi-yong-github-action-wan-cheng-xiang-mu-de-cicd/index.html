@@ -2,20 +2,18 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>编写自定义的kubernetes controller | BetainCao</title>
+<title>使用github action完成项目的CI/CD | BetainCao</title>
 <link rel="shortcut icon" href="https://betaincao.github.io//favicon.ico?v=1652163524236">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://betaincao.github.io//styles/main.css">
-<link rel="alternate" type="application/atom+xml" title="编写自定义的kubernetes controller | BetainCao - Atom Feed" href="https://betaincao.github.io//atom.xml">
+<link rel="alternate" type="application/atom+xml" title="使用github action完成项目的CI/CD | BetainCao - Atom Feed" href="https://betaincao.github.io//atom.xml">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
 
-    <meta name="description" content="当我们需要监控某个资源的变化并做一些列的操作时，使用k8s提供的controller机制来实现，k8s官方提供了提个通用库client-go。
-
-如上图所示，图中包含了client-go与controller的整个交互过程。
-..." />
-    <meta name="keywords" content="kubernetes,golang" />
+    <meta name="description" content="记得之前dockerhub的自动构建功能是免费的，收费之后github的项目就不能再免费自动构建docker镜像并推送到dockerhub仓库了。
+现在可以使用github action持续集成服务自动构建发布镜像到dockerhub，这里..." />
+    <meta name="keywords" content="" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
     <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
   </head>
@@ -81,35 +79,88 @@
         <div class="post-detail">
           <article class="post">
             <h2 class="post-title">
-              编写自定义的kubernetes controller
+              使用github action完成项目的CI/CD
             </h2>
             <div class="post-info">
               <span>
-                2021-11-08
+                2022-05-10
               </span>
               <span>
-                1 min read
+                3 min read
               </span>
-              
-                <a href="https://betaincao.github.io/tag/kubernetes/" class="post-tag">
-                  # kubernetes
-                </a>
-              
-                <a href="https://betaincao.github.io/tag/golang/" class="post-tag">
-                  # golang
-                </a>
               
             </div>
             
             <div class="post-content-wrapper">
               <div class="post-content">
-                <p>当我们需要监控某个资源的变化并做一些列的操作时，使用k8s提供的controller机制来实现，k8s官方提供了提个通用库client-go。<br>
-<img src="https://betaincao.github.io//post-images/1636359463968.jpeg" alt="" loading="lazy"><br>
-如上图所示，图中包含了client-go与controller的整个交互过程。</p>
+                <p>记得之前dockerhub的自动构建功能是免费的，收费之后github的项目就不能再免费自动构建docker镜像并推送到dockerhub仓库了。<br>
+现在可以使用github action持续集成服务自动构建发布镜像到dockerhub，这里记录一下怎么使用github action去做自动构建推送镜像。</p>
+<h4 id="配置github-action的workflow">配置github action的workflow</h4>
+<p>首先项目目录中需要有编写好的dockerfile，然后给项目新建.github/workflows/build-docker-image.yml文件，</p>
+<pre><code class="language-sh"># docker-image.yml
+name: Publish Docker image   # workflow名称，可以在Github项目主页的【Actions】中看到所有的workflow
+
+on:   # 配置触发workflow的事件
+  push:
+    branches:   # master分支有push时触发此workflow
+      - 'master'
+    tags:       # tag更新时触发此workflow
+      - '*'
+
+jobs:  # workflow中的job
+
+  push_to_registry:  # job的名字
+    name: Push Docker image to Docker Hub
+    runs-on: ubuntu-latest   # job运行的基础环境
+
+    steps:  # 一个job由一个或多个step组成
+      - name: Check out the repo
+        uses: actions/checkout@v2   # 官方的action，获取代码
+
+      - name: Log in to Docker Hub
+        uses: docker/login-action@v1  # 三方的action操作， 执行docker login
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}  # 配置dockerhub的认证，在Github项目主页 【Settings】 -&gt; 【Secrets】 添加对应变量
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Extract metadata (tags, labels) for Docker
+        id: meta
+        uses: docker/metadata-action@v3  # 抽取项目信息，主要是镜像的tag
+        with:
+          images: betaincao/test-nginx # dockerhub中对应的镜像目录
+
+      - name: Build and push Docker image
+        uses: docker/build-push-action@v2 # docker build &amp; push
+        with:
+          context: .
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+</code></pre>
+<p>配置中大部分都加上了注释，需要特别说明的是 steps 中的 uses 。 我们以第二个step Log in to Docker Hub 为例，正常情况下，我们应该是运行 run docker login ** 。 这里使用了一个 action docker/login-action，action 其实就是一系列step的组成，所以既然别人已经做好了，干嘛不直接用呢。所有可用的 action可以到 这里 查找。</p>
+<h4 id="推送使用">推送使用</h4>
+<p>配置妥当之后，提交代码推送至github。按照本例中的配置，只要master分支有push事件或者tag有更新，就会触发Github Action，然后自动构建镜像推送至DockerHub。<br>
+可以在Github项目主页的【Actions】栏中查看每次执行详情。</p>
 
               </div>
               <div class="toc-container">
-                
+                <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#%E9%85%8D%E7%BD%AEgithub-action%E7%9A%84workflow">配置github action的workflow</a></li>
+<li><a href="#%E6%8E%A8%E9%80%81%E4%BD%BF%E7%94%A8">推送使用</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
               </div>
             </div>
           </article>
@@ -118,9 +169,9 @@
         
           <div class="next-post">
             <div class="next">下一篇</div>
-            <a href="https://betaincao.github.io/post/hello1024/">
+            <a href="https://betaincao.github.io/post/git-rebase/">
               <h3 class="post-title">
-                Hello，1024
+                git rebase
               </h3>
             </a>
           </div>
