@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://betaincao.github.io/</id>
     <title>BetainCao</title>
-    <updated>2022-05-10T10:23:16.417Z</updated>
+    <updated>2022-05-27T06:23:54.863Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://betaincao.github.io/"/>
     <link rel="self" href="https://betaincao.github.io/atom.xml"/>
@@ -10,6 +10,13 @@
     <logo>https://betaincao.github.io/images/avatar.png</logo>
     <icon>https://betaincao.github.io/favicon.ico</icon>
     <rights>All rights reserved 2022, BetainCao</rights>
+    <entry>
+        <title type="html"><![CDATA[【操作系统】内存满了，会发生什么？]]></title>
+        <id>https://betaincao.github.io/post/cao-zuo-xi-tong-nei-cun-man-liao-hui-fa-sheng-shi-me/</id>
+        <link href="https://betaincao.github.io/post/cao-zuo-xi-tong-nei-cun-man-liao-hui-fa-sheng-shi-me/">
+        </link>
+        <updated>2022-05-27T06:17:37.000Z</updated>
+    </entry>
     <entry>
         <title type="html"><![CDATA[使用github action完成项目的CI/CD]]></title>
         <id>https://betaincao.github.io/post/shi-yong-github-action-wan-cheng-xiang-mu-de-cicd/</id>
@@ -72,12 +79,5 @@
         <link href="https://betaincao.github.io/post/golang-channel/">
         </link>
         <updated>2021-08-25T04:03:25.000Z</updated>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Hello World]]></title>
-        <id>https://betaincao.github.io/post/hello-world/</id>
-        <link href="https://betaincao.github.io/post/hello-world/">
-        </link>
-        <updated>2020-07-05T16:00:00.000Z</updated>
     </entry>
 </feed>
