@@ -2,11 +2,11 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://betaincao.github.io/</id>
     <title>BetainCao</title>
-    <updated>2022-06-20T03:39:30.574Z</updated>
+    <updated>2022-06-20T03:39:44.188Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://betaincao.github.io/"/>
     <link rel="self" href="https://betaincao.github.io/atom.xml"/>
-    <subtitle>Talk is cheap, show me the code！</subtitle>
+    <subtitle>云之道，云知道。</subtitle>
     <logo>https://betaincao.github.io/images/avatar.png</logo>
     <icon>https://betaincao.github.io/favicon.ico</icon>
     <rights>All rights reserved 2022, BetainCao</rights>
