@@ -2,20 +2,20 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>编写自定义的kubernetes controller | BetainCao</title>
+<title>记录自己常用的容器镜像和启动命令 | BetainCao</title>
 <link rel="shortcut icon" href="https://betaincao.github.io//favicon.ico?v=1655695155660">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://betaincao.github.io//styles/main.css">
-<link rel="alternate" type="application/atom+xml" title="编写自定义的kubernetes controller | BetainCao - Atom Feed" href="https://betaincao.github.io//atom.xml">
+<link rel="alternate" type="application/atom+xml" title="记录自己常用的容器镜像和启动命令 | BetainCao - Atom Feed" href="https://betaincao.github.io//atom.xml">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
 
-    <meta name="description" content="当我们需要监控某个资源的变化并做一些列的操作时，使用k8s提供的controller机制来实现，k8s官方提供了提个通用库client-go。
-
-如上图所示，图中包含了client-go与controller的整个交互过程。
-..." />
-    <meta name="keywords" content="kubernetes,golang" />
+    <meta name="description" content="mysql
+docker run -p 3306:3306 --name mysql \
+-v /usr/local/docker/mysql/conf:/etc/mysql \
+-v /usr/local/docker/mysql/log..." />
+    <meta name="keywords" content="" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
     <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
   </head>
@@ -81,35 +81,67 @@
         <div class="post-detail">
           <article class="post">
             <h2 class="post-title">
-              编写自定义的kubernetes controller
+              记录自己常用的容器镜像和启动命令
             </h2>
             <div class="post-info">
               <span>
-                2021-11-08
+                2022-06-20
               </span>
               <span>
-                1 min read
+                2 min read
               </span>
-              
-                <a href="https://betaincao.github.io/tag/kubernetes/" class="post-tag">
-                  # kubernetes
-                </a>
-              
-                <a href="https://betaincao.github.io/tag/golang/" class="post-tag">
-                  # golang
-                </a>
               
             </div>
             
             <div class="post-content-wrapper">
               <div class="post-content">
-                <p>当我们需要监控某个资源的变化并做一些列的操作时，使用k8s提供的controller机制来实现，k8s官方提供了提个通用库client-go。<br>
-<img src="https://betaincao.github.io//post-images/1636359463968.jpeg" alt="" loading="lazy"><br>
-如上图所示，图中包含了client-go与controller的整个交互过程。</p>
+                <h4 id="mysql">mysql</h4>
+<pre><code class="language-sh">docker run -p 3306:3306 --name mysql \
+-v /usr/local/docker/mysql/conf:/etc/mysql \
+-v /usr/local/docker/mysql/logs:/var/log/mysql \
+-v /usr/local/docker/mysql/data:/var/lib/mysql \
+-e MYSQL_ROOT_PASSWORD=123456 \
+-d mysql:5.7
+</code></pre>
+<h4 id="elasticsearch">elasticsearch</h4>
+<pre><code class="language-sh">docker run -e  -d -p 9200:9200 -p 9300:9300 -v ${ES_SINGLE}/config/es-single.yml:/usr/share/elasticsearch/config/elasticsearch.yml -v ${ES_SINGLE}/data:/usr/share/elasticsearch/data --name es-single elasticsearch:7.6.2
+</code></pre>
+<h4 id="redis">redis</h4>
+<pre><code class="language-sh">docker run --name redis -d -p 6380:6379 redis
+</code></pre>
+<h4 id="prometheus">prometheus</h4>
+<pre><code class="language-sh">docker run  -d   -p 10050:9090   -v /opt/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml    prom/prometheus
+</code></pre>
+<h4 id="grafana">grafana</h4>
+<pre><code class="language-sh">docker run -d   -p 10051:3000   --name=grafana   -e &quot;GF_SERVER_ROOT_URL=http://grafana.server.name&quot;   -e &quot;GF_SECURITY_ADMIN_PASSWORD=admin&quot;   grafana/grafana
+</code></pre>
+<h4 id="kafka">kafka</h4>
+<pre><code class="language-sh">docker run -d --name kafka -p 15672:9092 -e KAFKA_BROKER_ID=0 -e KAFKA_ZOOKEEPER_CONNECT=zookeeper:5672 --link zookeeper -e KAFKA_ADVERTISED_LISTENERS=PLAINTEXT://47.93.185.66:15672 -e KAFKA_LISTENERS=PLAINTEXT://0.0.0.0:15672 -t wurstmeister/kafka
+</code></pre>
 
               </div>
               <div class="toc-container">
-                
+                <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#mysql">mysql</a></li>
+<li><a href="#elasticsearch">elasticsearch</a></li>
+<li><a href="#redis">redis</a></li>
+<li><a href="#prometheus">prometheus</a></li>
+<li><a href="#grafana">grafana</a></li>
+<li><a href="#kafka">kafka</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
               </div>
             </div>
           </article>
@@ -118,9 +150,9 @@
         
           <div class="next-post">
             <div class="next">下一篇</div>
-            <a href="https://betaincao.github.io/post/hello1024/">
+            <a href="https://betaincao.github.io/post/cao-zuo-xi-tong-nei-cun-man-liao-hui-fa-sheng-shi-me/">
               <h3 class="post-title">
-                Hello，1024
+                【操作系统】内存满了，会发生什么？
               </h3>
             </a>
           </div>
