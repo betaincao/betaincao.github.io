@@ -3,7 +3,7 @@
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>记录自己常用的容器镜像和启动命令 | BetainCao</title>
-<link rel="shortcut icon" href="https://betaincao.github.io//favicon.ico?v=1655696375553">
+<link rel="shortcut icon" href="https://betaincao.github.io//favicon.ico?v=1655779102297">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://betaincao.github.io//styles/main.css">
 <link rel="alternate" type="application/atom+xml" title="记录自己常用的容器镜像和启动命令 | BetainCao - Atom Feed" href="https://betaincao.github.io//atom.xml">
@@ -24,7 +24,7 @@ docker run -p 3306:3306 --name mysql \
       <div class="main-content">
         <div class="site-header">
   <a href="https://betaincao.github.io/">
-  <img class="avatar" src="https://betaincao.github.io//images/avatar.png?v=1655696375553" alt="">
+  <img class="avatar" src="https://betaincao.github.io//images/avatar.png?v=1655779102297" alt="">
   </a>
   <h1 class="site-title">
     BetainCao
@@ -107,6 +107,9 @@ docker run -p 3306:3306 --name mysql \
 -e MYSQL_ROOT_PASSWORD=123456 \
 -d mysql:5.7
 </code></pre>
+<h4 id="phpmyadmin">phpmyadmin</h4>
+<pre><code class="language-sh">docker run --name phpmyadmin -d --link mysql -e PMA_HOST=&quot;mysql&quot; -p 6061:80 phpmyadmin/phpmyadmin
+</code></pre>
 <h4 id="elasticsearch">elasticsearch</h4>
 <pre><code class="language-sh">docker run -e  -d -p 9200:9200 -p 9300:9300 -v ${ES_SINGLE}/config/es-single.yml:/usr/share/elasticsearch/config/elasticsearch.yml -v ${ES_SINGLE}/data:/usr/share/elasticsearch/data --name es-single elasticsearch:7.6.2
 </code></pre>
@@ -133,6 +136,7 @@ docker run -p 3306:3306 --name mysql \
 <li>
 <ul>
 <li><a href="#mysql">mysql</a></li>
+<li><a href="#phpmyadmin">phpmyadmin</a></li>
 <li><a href="#elasticsearch">elasticsearch</a></li>
 <li><a href="#redis">redis</a></li>
 <li><a href="#prometheus">prometheus</a></li>
