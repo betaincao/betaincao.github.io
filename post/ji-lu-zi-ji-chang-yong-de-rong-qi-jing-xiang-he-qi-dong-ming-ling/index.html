@@ -3,7 +3,7 @@
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>记录自己常用的容器镜像和启动命令 | BetainCao</title>
-<link rel="shortcut icon" href="https://betaincao.github.io//favicon.ico?v=1655779102297">
+<link rel="shortcut icon" href="https://betaincao.github.io//favicon.ico?v=1657117607860">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://betaincao.github.io//styles/main.css">
 <link rel="alternate" type="application/atom+xml" title="记录自己常用的容器镜像和启动命令 | BetainCao - Atom Feed" href="https://betaincao.github.io//atom.xml">
@@ -24,7 +24,7 @@ docker run -p 3306:3306 --name mysql \
       <div class="main-content">
         <div class="site-header">
   <a href="https://betaincao.github.io/">
-  <img class="avatar" src="https://betaincao.github.io//images/avatar.png?v=1655779102297" alt="">
+  <img class="avatar" src="https://betaincao.github.io//images/avatar.png?v=1657117607860" alt="">
   </a>
   <h1 class="site-title">
     BetainCao
@@ -125,6 +125,9 @@ docker run -p 3306:3306 --name mysql \
 <h4 id="kafka">kafka</h4>
 <pre><code class="language-sh">docker run -d --name kafka -p 15672:9092 -e KAFKA_BROKER_ID=0 -e KAFKA_ZOOKEEPER_CONNECT=zookeeper:5672 --link zookeeper -e KAFKA_ADVERTISED_LISTENERS=PLAINTEXT://47.93.185.66:15672 -e KAFKA_LISTENERS=PLAINTEXT://0.0.0.0:15672 -t wurstmeister/kafka
 </code></pre>
+<h4 id="http文件服务">http文件服务</h4>
+<pre><code class="language-sh">docker run -it --rm -p 7000:8000 -v $PWD:/app/public --name gohttpserver -d bushinvren1986/mygohttpserver:v1 --upload --delete
+</code></pre>
 
               </div>
               <div class="toc-container">
@@ -142,6 +145,7 @@ docker run -p 3306:3306 --name mysql \
 <li><a href="#prometheus">prometheus</a></li>
 <li><a href="#grafana">grafana</a></li>
 <li><a href="#kafka">kafka</a></li>
+<li><a href="#http%E6%96%87%E4%BB%B6%E6%9C%8D%E5%8A%A1">http文件服务</a></li>
 </ul>
 </li>
 </ul>
