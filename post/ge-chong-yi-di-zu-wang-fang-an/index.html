@@ -2,21 +2,21 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>docker lifetime | BetainCao</title>
+<title>各种异地组网方案 | BetainCao</title>
 <link rel="shortcut icon" href="https://betaincao.github.io//favicon.ico?v=1664159695890">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://betaincao.github.io//styles/main.css">
-<link rel="alternate" type="application/atom+xml" title="docker lifetime | BetainCao - Atom Feed" href="https://betaincao.github.io//atom.xml">
+<link rel="alternate" type="application/atom+xml" title="各种异地组网方案 | BetainCao - Atom Feed" href="https://betaincao.github.io//atom.xml">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
 
-    <meta name="description" content="直接上图：
+    <meta name="description" content="这些年内网穿透/异地组网的方案比较多
 
-解读：
-1、容器状态（上图中带颜色的圆圈）：Created，Running，Paused，Stopped，Deleted；
-2、Docker命令：docker run，docker create，docker stop，doc..." />
-    <meta name="keywords" content="docker" />
+headscale(tailscale服务端开源版，基于wireguard ) 。教程近期多起来了，趋势热度比zerotier的越来越高，B站有教程，可以试试。（没用过，但最推荐）
+相关链接：
+htt..." />
+    <meta name="keywords" content="" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
     <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
   </head>
@@ -82,65 +82,57 @@
         <div class="post-detail">
           <article class="post">
             <h2 class="post-title">
-              docker lifetime
+              各种异地组网方案
             </h2>
             <div class="post-info">
               <span>
-                2021-11-16
+                2022-09-26
               </span>
               <span>
                 2 min read
               </span>
               
-                <a href="https://betaincao.github.io/tag/docker/" class="post-tag">
-                  # docker
-                </a>
-              
             </div>
-            
-              <img class="post-feature-image" src="https://betaincao.github.io//post-images/docker-lifetime.png" alt="">
             
             <div class="post-content-wrapper">
               <div class="post-content">
-                <p>直接上图：<br>
-<img src="https://betaincao.github.io//post-images/1637043469549.png" alt="" loading="lazy"><br>
-解读：<br>
-1、容器状态（上图中带颜色的圆圈）：Created，Running，Paused，Stopped，Deleted；<br>
-2、Docker命令：docker run，docker create，docker stop，docker rm，docker pause，docker kill，docker unpause等；<br>
-3、docker相关事件（上图中的矩形框）：create，start，die，stop，OOM等；<br>
-4、重启策略判断条件：根据重启策略（restart policy）判断是否需要重启容器</p>
-<h2 id="第一条路径">第一条路径：</h2>
-<p><img src="https://betaincao.github.io//post-images/1637043979518.png" alt="" loading="lazy"><br>
-如上图所示:<br>
-1、我们先通过 docker run 命令，直接创建（ create ）并启动（ start ）一个容器，进入到运行状态（ Running ）<br>
-2、然后程序运行结束（例如输出 Hello World 之后，或者通过 Ctrl + C 使得程序终止），容器死亡（ die ）<br>
-3、由于我们没有设置重启策略，所以直接进入到停止状态（ Stopped ）<br>
-4、最后通过 docker rm 命令销毁容器，进入到被删除状态（ Deleted ）</p>
-<h2 id="第二条路径">第二条路径：</h2>
-<p><img src="https://betaincao.github.io//post-images/1637044084057.png" alt="" loading="lazy"><br>
-如上图所示：<br>
-1、我们还是通过 docker run 命令，直接创建（ create ）并启动（ start ）一个容器，进入到运行状态（ Running ）<br>
-2、然后通过 docker stop 命令杀死容器中的程序（ die ）并停止（ stop ）容器，最终进入到停止状态（ Stopped ）<br>
-3、最后通过 docker rm 命令销毁容器，进入到被删除状态（ Deleted ）</p>
-<h3 id="tips">tips:</h3>
-<p>docker stop与docker kill 区别：<br>
-kill 命令向容器内运行的程序直接发出 SIGKILL 信号（或其他指定信号），而 stop 则是先发出 SIGTERM 再发出 SIGKILL 信号，属于优雅关闭（ Graceful Shutdown ）。推荐使用docker stop。</p>
+                <p>这些年内网穿透/异地组网的方案比较多</p>
+<ol>
+<li>headscale(tailscale服务端开源版，基于wireguard ) 。教程近期多起来了，趋势热度比zerotier的越来越高，B站有教程，可以试试。（没用过，但最推荐）<br>
+相关链接：<br>
+https://icloudnative.io/posts/how-to-set-up-or-migrate-headscale/</li>
+</ol>
+<p>https://github.com/gurucomputing/headscale-ui</p>
+<p>https://b23.tv/LVBGssI</p>
+<ol start="2">
+<li>zerotier自建planet，（前面说没速度的怀疑用的是官方服务器打洞不成功流量被中转了）。</li>
+</ol>
+<p>自建比较折腾，服务端需要修改源码，编译，每个客户端复制planet文件，和服务端部署前端UI部分。我目前采用这种方式，因为一直用zerotier，不想换其他工具。</p>
+<p>优势：控制权限和路由配置简单，在UI层配置即可。</p>
+<p>https://bit.ly/3SyIDF0</p>
+<p>https://www.v2ex.com/t/869846</p>
+<ol start="3">
+<li>n2n，版本太多有点捋不清，跨版本打洞听说有问题，用好我觉得n2n才是最简单的，supernode和edge启动起来就几个参数</li>
+</ol>
+<p>https://bit.ly/3RbhIy4</p>
+<ol start="4">
+<li>nebula 站长曾推荐过的<br>
+https://github.com/slackhq/nebula</li>
+</ol>
+<p>https://www.v2ex.com/t/621442</p>
+<p>配置需要深入阅读才知道怎么配置路由</p>
+<ol start="5">
+<li>穿透/端口映射转发</li>
+</ol>
+<p>frp/zoro/cloudflare tunnel</p>
+<p>https://github.com/fatedier/frp</p>
+<p>https://github.com/txthinking/zoro/blob/master/README_ZH.md</p>
+<p>https://lxnchan.cn/cf-tunnel.html</p>
+<p>https://developers.cloudflare.com/cloudflare-one/connections/connect-apps/</p>
 
               </div>
               <div class="toc-container">
-                <ul class="markdownIt-TOC">
-<li>
-<ul>
-<li><a href="#%E7%AC%AC%E4%B8%80%E6%9D%A1%E8%B7%AF%E5%BE%84">第一条路径：</a></li>
-<li><a href="#%E7%AC%AC%E4%BA%8C%E6%9D%A1%E8%B7%AF%E5%BE%84">第二条路径：</a>
-<ul>
-<li><a href="#tips">tips:</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
+                
               </div>
             </div>
           </article>
@@ -149,9 +141,9 @@ kill 命令向容器内运行的程序直接发出 SIGKILL 信号（或其他指
         
           <div class="next-post">
             <div class="next">下一篇</div>
-            <a href="https://betaincao.github.io/post/bian-xie-zi-ding-yi-de-kubernetes-controller/">
+            <a href="https://betaincao.github.io/post/docker-chang-yong-ming-ling/">
               <h3 class="post-title">
-                编写自定义的kubernetes controller
+                docker常用命令
               </h3>
             </a>
           </div>
