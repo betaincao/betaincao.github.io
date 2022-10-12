@@ -1,144 +1,264 @@
-
 <!DOCTYPE html>
 <html>
   <head>
-    
-<meta charset="utf-8" >
+    <meta charset="utf-8" >
 
 <title>Hello World | 一只猫（ACAT）工作室</title>
 <meta name="description" content="一只猫工作室承接定制开发微信小程序、app开发、网站开发等。我们拥有优秀的团队，一流的服务，专业的技术。为您节省成本，提高效率！有需求的欢迎咨询！">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+<link rel="shortcut icon" href="https://rocky1996.github.io//favicon.ico?v=1665569333713">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://rocky1996.github.io//favicon.ico?v=1665569084621">
+<link rel="stylesheet" href="https://unpkg.com/papercss@1.6.1/dist/paper.min.css" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://rocky1996.github.io//styles/main.css">
 
 
-
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
 
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
 
   </head>
   <body>
-    <div id="app" class="main">
-      <div class="site-header-container">
-  <div class="site-header">
-    <div class="left">
-      <a href="https://rocky1996.github.io/">
-        <img class="avatar" src="https://rocky1996.github.io//images/avatar.png?v=1665569084621" alt="" width="32px" height="32px">
-      </a>
-      <a href="https://rocky1996.github.io/">
-        <h1 class="site-title">一只猫（ACAT）工作室</h1>
-      </a>
-    </div>
-    <div class="right">
-      <transition name="fade">
-        <i class="icon" :class="{ 'icon-close-outline': menuVisible, 'icon-menu-outline': !menuVisible }" @click="menuVisible = !menuVisible"></i>
-      </transition>
+  
+    <nav class="navbar border fixed split-nav">
+  <div class="nav-brand">
+    <h3><a href="https://rocky1996.github.io/">一只猫（ACAT）工作室</a></h3>
+  </div>
+  <div class="collapsible">
+    <input id="collapsible1" type="checkbox" name="collapsible1">
+    <button>
+      <label for="collapsible1">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+      </label>
+    </button>
+    <div class="collapsible-body">
+      <ul class="inline">
+        
+          <li>
+            
+              <a href="/" class="menu">
+                首页
+              </a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="/archives" class="menu">
+                归档
+              </a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="/tags" class="menu">
+                标签
+              </a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="/post/about" class="menu">
+                关于
+              </a>
+            
+          </li>
+        
+      </ul>
     </div>
   </div>
-</div>
+</nav>
 
-<transition name="fade">
-  <div class="menu-container" style="display: none;" v-show="menuVisible">
-    <div class="menu-list">
-      
-        
-          <a href="/" class="menu purple-link">
-            首页
-          </a>
-        
-      
-        
-          <a href="/archives" class="menu purple-link">
-            归档
-          </a>
-        
-      
-        
-          <a href="/tags" class="menu purple-link">
-            标签
-          </a>
-        
-      
-        
-          <a href="/post/about" class="menu purple-link">
-            关于
-          </a>
-        
-      
-    </div>
-  </div>
-</transition>
-
-
-      <div class="content-container">
-        <div class="post-detail">
-          
-          <h2 class="post-title">Hello World</h2>
-          <div class="post-info post-detail-info">
-            <span><i class="icon-calendar-outline"></i> 2020-07-06</span>
+    <div id="top" class="row site">
+      <div class="sm-12 md-8 col">
+        <div class="paper">
+          <article class="article">
+            <h1>Hello World</h1>
+            <p class="article-meta">
+              2020-07-06
+              
+                <a href="https://rocky1996.github.io/tag/hello-world/" class="badge ">
+                  hello-world
+                </a>
+              
+            </p>
             
-              <span>
-                <i class="icon-pricetags-outline"></i>
-                
-                  <a href="https://rocky1996.github.io/tag/hello-world/">
-                    hello-world
-                    
-                  </a>
-                
-              </span>
-            
-          </div>
-          <div class="post-content">
-            <p>👏  Welcome to <strong>BetainCao</strong>！<br>
+            <div class="post-content">
+              <p>👏  Welcome to <strong>BetainCao</strong>！<br>
 ⭕️ Talk is cheap, show me the <strong>code</strong>！<br>
 ✍️  <strong>学习记录</strong> 每天都学习一点，探究事物的本质，方可成为大牛...</p>
 <p>😘 Enjoy~</p>
 
-          </div>
+            </div>
+          </article>
         </div>
-
+        <div class="paper" data-aos="fade-in">
+          
+        </div>
         
       </div>
 
+      <div class="sm-12 md-4 col sidebar">
+  <div class="paper info-container">
+    <img src="https://rocky1996.github.io//images/avatar.png?v=1665569333713" class="no-responsive avatar">
+    <div class="text-muted">一只猫工作室承接定制开发微信小程序、app开发、网站开发等。我们拥有优秀的团队，一流的服务，专业的技术。为您节省成本，提高效率！有需求的欢迎咨询！</div>
+    <div class="social-container">
       
-
-      <div class="site-footer">
-  <div class="slogan">一只猫工作室承接定制开发微信小程序、app开发、网站开发等。我们拥有优秀的团队，一流的服务，专业的技术。为您节省成本，提高效率！有需求的欢迎咨询！</div>
-  <div class="social-container">
-    
+        
       
-    
+        
       
-    
+        
       
-    
+        
       
-    
+        
       
-    
+    </div>
   </div>
-  Powered by  <a href="http://acatoffice.cn"> 一只猫（ACAT）工作室</a> | <a class="rss" href="https://rocky1996.github.io//atom.xml" target="_blank">RSS</a>
+  <div class="paper">
+    <div class="sidebar-title">
+      最新文章
+    </div>
+    <div class="row">
+      <ul>
+        
+          
+            <li>
+              <a href="https://rocky1996.github.io/post/ge-chong-yi-di-zu-wang-fang-an/">各种异地组网方案</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://rocky1996.github.io/post/docker-chang-yong-ming-ling/">docker常用命令</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://rocky1996.github.io/post/ji-lu-zi-ji-chang-yong-de-rong-qi-jing-xiang-he-qi-dong-ming-ling/">记录自己常用的容器镜像和启动命令</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://rocky1996.github.io/post/cao-zuo-xi-tong-nei-cun-man-liao-hui-fa-sheng-shi-me/">【操作系统】内存满了，会发生什么？</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://rocky1996.github.io/post/shi-yong-github-action-wan-cheng-xiang-mu-de-cicd/">使用github action完成项目的CI/CD</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://rocky1996.github.io/post/git-rebase/">git rebase</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://rocky1996.github.io/post/docker-lifetime/">docker lifetime</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://rocky1996.github.io/post/bian-xie-zi-ding-yi-de-kubernetes-controller/">编写自定义的kubernetes controller</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://rocky1996.github.io/post/hello1024/">Hello，1024</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://rocky1996.github.io/post/gen-bei-jing-shuo-ge-zai-jian-ba/">跟北京说个再见吧</a>
+            </li>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      </ul>
+    </div>
+  </div>
+  <div class="paper">
+    <div class="sidebar-title">
+      标签列表
+    </div>
+    <div class="row">
+      
+        <a href="https://rocky1996.github.io/tag/docker/" class="badge secondary">
+          docker
+        </a>
+      
+        <a href="https://rocky1996.github.io/tag/qS5pdMHaT/" class="badge success">
+          操作系统
+        </a>
+      
+        <a href="https://rocky1996.github.io/tag/R-OGo86G-/" class="badge warning">
+          cicd
+        </a>
+      
+        <a href="https://rocky1996.github.io/tag/kubernetes/" class="badge ">
+          kubernetes
+        </a>
+      
+        <a href="https://rocky1996.github.io/tag/golang/" class="badge secondary">
+          golang
+        </a>
+      
+        <a href="https://rocky1996.github.io/tag/8wT4OQIBC/" class="badge secondary">
+          随想
+        </a>
+      
+        <a href="https://rocky1996.github.io/tag/interview/" class="badge ">
+          面试
+        </a>
+      
+        <a href="https://rocky1996.github.io/tag/hello-world/" class="badge secondary">
+          hello-world
+        </a>
+      
+    </div>
+  </div>
+  <div class="paper">
+    Powered by  <a href="http://acatoffice.cn"> 一只猫（ACAT）工作室</a> | <a class="rss" href="https://rocky1996.github.io//atom.xml" target="_blank">RSS</a>
+  </div>
 </div>
 
 
     </div>
-    <script type="application/javascript">
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+<script type="application/javascript">
+
+AOS.init();
 
 hljs.initHighlightingOnLoad()
-
-var app = new Vue({
-  el: '#app',
-  data: {
-    menuVisible: false,
-  },
-})
 
 </script>
 
