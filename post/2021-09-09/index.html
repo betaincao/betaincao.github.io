@@ -1,103 +1,102 @@
+
+<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>写个社招的面经吧 | BetainCao</title>
-<link rel="shortcut icon" href="https://betaincao.github.io//favicon.ico?v=1664159695890">
-<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
-<link rel="stylesheet" href="https://betaincao.github.io//styles/main.css">
-<link rel="alternate" type="application/atom+xml" title="写个社招的面经吧 | BetainCao - Atom Feed" href="https://betaincao.github.io//atom.xml">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+    
+<meta charset="utf-8" >
+
+<title>写个社招的面经吧 | 一只猫（ACAT）工作室</title>
+<meta name="description" content="一只猫工作室承接定制开发微信小程序、app开发、网站开发等。我们拥有优秀的团队，一流的服务，专业的技术。为您节省成本，提高效率！有需求的欢迎咨询！">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://rocky1996.github.io//favicon.ico?v=1665569058289">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://rocky1996.github.io//styles/main.css">
 
 
 
-    <meta name="description" content="个人情况
-毕业两年，北京在线教育创业公司，技术氛围不错。主要语言栈golang、python，主要技术方向是k8s、容器、云计算。有服务上云的实践经历，了解cicd基本流程，求知意向是容器研发、基础架构研发、运维研发之类的（主要还是研发方向..." />
-    <meta name="keywords" content="面试" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
-    <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+
   </head>
   <body>
-    <div class="main">
-      <div class="main-content">
-        <div class="site-header">
-  <a href="https://betaincao.github.io/">
-  <img class="avatar" src="https://betaincao.github.io//images/avatar.png?v=1664159695890" alt="">
-  </a>
-  <h1 class="site-title">
-    BetainCao
-  </h1>
-  <p class="site-description">
-    云之道，云知道。
-  </p>
-  <div class="menu-container">
-    
-      
-        <a href="/" class="menu">
-          首页
-        </a>
-      
-    
-      
-        <a href="/archives" class="menu">
-          归档
-        </a>
-      
-    
-      
-        <a href="/tags" class="menu">
-          标签
-        </a>
-      
-    
-      
-        <a href="/post/about" class="menu">
-          关于
-        </a>
-      
-    
-  </div>
-  <div class="social-container">
-    
-      
-        <a href="https://github.com/betaincao" target="_blank">
-          <i class="ri-github-line"></i>
-        </a>
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
+    <div id="app" class="main">
+      <div class="site-header-container">
+  <div class="site-header">
+    <div class="left">
+      <a href="https://rocky1996.github.io/">
+        <img class="avatar" src="https://rocky1996.github.io//images/avatar.png?v=1665569058289" alt="" width="32px" height="32px">
+      </a>
+      <a href="https://rocky1996.github.io/">
+        <h1 class="site-title">一只猫（ACAT）工作室</h1>
+      </a>
+    </div>
+    <div class="right">
+      <transition name="fade">
+        <i class="icon" :class="{ 'icon-close-outline': menuVisible, 'icon-menu-outline': !menuVisible }" @click="menuVisible = !menuVisible"></i>
+      </transition>
+    </div>
   </div>
 </div>
 
+<transition name="fade">
+  <div class="menu-container" style="display: none;" v-show="menuVisible">
+    <div class="menu-list">
+      
+        
+          <a href="/" class="menu purple-link">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="menu purple-link">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="menu purple-link">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="menu purple-link">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+</transition>
+
+
+      <div class="content-container">
         <div class="post-detail">
-          <article class="post">
-            <h2 class="post-title">
-              写个社招的面经吧
-            </h2>
-            <div class="post-info">
-              <span>
-                2021-09-09
-              </span>
-              <span>
-                5 min read
-              </span>
-              
-                <a href="https://betaincao.github.io/tag/interview/" class="post-tag">
-                  # 面试
-                </a>
-              
-            </div>
+          
+          <h2 class="post-title">写个社招的面经吧</h2>
+          <div class="post-info post-detail-info">
+            <span><i class="icon-calendar-outline"></i> 2021-09-09</span>
             
-            <div class="post-content-wrapper">
-              <div class="post-content">
-                <h2 id="个人情况">个人情况</h2>
+              <span>
+                <i class="icon-pricetags-outline"></i>
+                
+                  <a href="https://rocky1996.github.io/tag/interview/">
+                    面试
+                    
+                  </a>
+                
+              </span>
+            
+          </div>
+          <div class="post-content">
+            <h2 id="个人情况">个人情况</h2>
 <p>毕业两年，北京在线教育创业公司，技术氛围不错。主要语言栈golang、python，主要技术方向是k8s、容器、云计算。有服务上云的实践经历，了解cicd基本流程，求知意向是容器研发、基础架构研发、运维研发之类的（主要还是研发方向）。</p>
 <h2 id="面试周期">面试周期</h2>
 <p>2021.7.19 ~ 2021.8.30</p>
@@ -165,102 +164,57 @@
 <p>1、git 的相关操作，合并commit，合并之类的。<br>
 2、场景设计</p>
 
-              </div>
-              <div class="toc-container">
-                <ul class="markdownIt-TOC">
-<li>
-<ul>
-<li><a href="#%E4%B8%AA%E4%BA%BA%E6%83%85%E5%86%B5">个人情况</a></li>
-<li><a href="#%E9%9D%A2%E8%AF%95%E5%91%A8%E6%9C%9F">面试周期</a></li>
-<li><a href="#%E5%B7%B2%E9%9D%A2%E8%AF%95%E5%85%AC%E5%8F%B8">已面试公司</a></li>
-<li><a href="#%E7%AE%80%E5%8D%95%E8%AF%B4%E4%B8%80%E4%B8%8B%E9%9D%A2%E8%AF%95%E7%9A%84%E5%9F%BA%E6%9C%AC%E9%97%AE%E9%A2%98%E5%90%A7%E4%B8%BB%E8%A6%81%E8%BF%98%E6%98%AF%E5%81%8F%E5%90%91%E5%9F%BA%E7%A1%80">简单说一下面试的基本问题吧（主要还是偏向基础）</a>
-<ul>
-<li><a href="#%E9%A1%B9%E7%9B%AE%E6%96%B9%E5%90%91">项目方向：</a></li>
-<li><a href="#%E8%AF%AD%E8%A8%80%E6%A0%88">语言栈：</a>
-<ul>
-<li><a href="#golang">golang</a></li>
-<li><a href="#python">python</a></li>
-</ul>
-</li>
-<li><a href="#%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F">操作系统：</a></li>
-<li><a href="#k8s-%E5%AE%B9%E5%99%A8">k8s &amp; 容器：</a></li>
-<li><a href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C">计算机网络：</a></li>
-<li><a href="#%E6%95%B0%E6%8D%AE%E5%BA%93">数据库：</a></li>
-<li><a href="#%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95">数据结构与算法：</a></li>
-<li><a href="#%E5%85%B6%E4%BB%96">其他：</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
-              </div>
-            </div>
-          </article>
+          </div>
         </div>
 
         
           <div class="next-post">
-            <div class="next">下一篇</div>
-            <a href="https://betaincao.github.io/post/rong-qi-yu-jing-xiang/">
+            <a class="purple-link" href="https://rocky1996.github.io/post/rong-qi-yu-jing-xiang/">
               <h3 class="post-title">
-                容器与镜像
+                下一篇：容器与镜像
               </h3>
             </a>
           </div>
-        
+          
+      </div>
 
-        
+      
 
-        <div class="site-footer">
-  Powered by  <a href="https://github.com/betaincao"> betaincao</a>
-  <a class="rss" href="https://betaincao.github.io//atom.xml" target="_blank">
-    <i class="ri-rss-line"></i> RSS
-  </a>
+      <div class="site-footer">
+  <div class="slogan">一只猫工作室承接定制开发微信小程序、app开发、网站开发等。我们拥有优秀的团队，一流的服务，专业的技术。为您节省成本，提高效率！有需求的欢迎咨询！</div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+  Powered by  <a href="http://acatoffice.cn"> 一只猫（ACAT）工作室</a> | <a class="rss" href="https://rocky1996.github.io//atom.xml" target="_blank">RSS</a>
 </div>
 
-      </div>
+
     </div>
+    <script type="application/javascript">
 
-    <script>
-      hljs.initHighlightingOnLoad()
+hljs.initHighlightingOnLoad()
 
-      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
 
-      // This should probably be throttled.
-      // Especially because it triggers during smooth scrolling.
-      // https://lodash.com/docs/4.17.10#throttle
-      // You could do like...
-      // window.addEventListener("scroll", () => {
-      //    _.throttle(doThatStuff, 100);
-      // });
-      // Only not doing it here to keep this Pen dependency-free.
+</script>
 
-      window.addEventListener("scroll", event => {
-        let fromTop = window.scrollY;
 
-        mainNavLinks.forEach((link, index) => {
-          let section = document.getElementById(decodeURI(link.hash).substring(1));
-          let nextSection = null
-          if (mainNavLinks[index + 1]) {
-            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
-          }
-          if (section.offsetTop <= fromTop) {
-            if (nextSection) {
-              if (nextSection.offsetTop > fromTop) {
-                link.classList.add("current");
-              } else {
-                link.classList.remove("current");    
-              }
-            } else {
-              link.classList.add("current");
-            }
-          } else {
-            link.classList.remove("current");
-          }
-        });
-      });
 
-    </script>
+
   </body>
 </html>

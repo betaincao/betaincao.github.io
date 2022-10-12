@@ -1,108 +1,102 @@
+
+<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>golang - channel | BetainCao</title>
-<link rel="shortcut icon" href="https://betaincao.github.io//favicon.ico?v=1664159695890">
-<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
-<link rel="stylesheet" href="https://betaincao.github.io//styles/main.css">
-<link rel="alternate" type="application/atom+xml" title="golang - channel | BetainCao - Atom Feed" href="https://betaincao.github.io//atom.xml">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+    
+<meta charset="utf-8" >
+
+<title>golang - channel | 一只猫（ACAT）工作室</title>
+<meta name="description" content="一只猫工作室承接定制开发微信小程序、app开发、网站开发等。我们拥有优秀的团队，一流的服务，专业的技术。为您节省成本，提高效率！有需求的欢迎咨询！">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://rocky1996.github.io//favicon.ico?v=1665569058289">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://rocky1996.github.io//styles/main.css">
 
 
 
-    <meta name="description" content="go语言中最常见的、也是经常被人提及的设计模式--不要使用共享内存的方式通信，应该通过通信的方式共享内存。
-channel的特性
-1、先入先出（FIFO）
-2、无锁管道
-关闭channel的方式
-1、context
-2、done chann..." />
-    <meta name="keywords" content="golang" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
-    <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+
   </head>
   <body>
-    <div class="main">
-      <div class="main-content">
-        <div class="site-header">
-  <a href="https://betaincao.github.io/">
-  <img class="avatar" src="https://betaincao.github.io//images/avatar.png?v=1664159695890" alt="">
-  </a>
-  <h1 class="site-title">
-    BetainCao
-  </h1>
-  <p class="site-description">
-    云之道，云知道。
-  </p>
-  <div class="menu-container">
-    
-      
-        <a href="/" class="menu">
-          首页
-        </a>
-      
-    
-      
-        <a href="/archives" class="menu">
-          归档
-        </a>
-      
-    
-      
-        <a href="/tags" class="menu">
-          标签
-        </a>
-      
-    
-      
-        <a href="/post/about" class="menu">
-          关于
-        </a>
-      
-    
-  </div>
-  <div class="social-container">
-    
-      
-        <a href="https://github.com/betaincao" target="_blank">
-          <i class="ri-github-line"></i>
-        </a>
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
+    <div id="app" class="main">
+      <div class="site-header-container">
+  <div class="site-header">
+    <div class="left">
+      <a href="https://rocky1996.github.io/">
+        <img class="avatar" src="https://rocky1996.github.io//images/avatar.png?v=1665569058289" alt="" width="32px" height="32px">
+      </a>
+      <a href="https://rocky1996.github.io/">
+        <h1 class="site-title">一只猫（ACAT）工作室</h1>
+      </a>
+    </div>
+    <div class="right">
+      <transition name="fade">
+        <i class="icon" :class="{ 'icon-close-outline': menuVisible, 'icon-menu-outline': !menuVisible }" @click="menuVisible = !menuVisible"></i>
+      </transition>
+    </div>
   </div>
 </div>
 
+<transition name="fade">
+  <div class="menu-container" style="display: none;" v-show="menuVisible">
+    <div class="menu-list">
+      
+        
+          <a href="/" class="menu purple-link">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="menu purple-link">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="menu purple-link">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="menu purple-link">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+</transition>
+
+
+      <div class="content-container">
         <div class="post-detail">
-          <article class="post">
-            <h2 class="post-title">
-              golang - channel
-            </h2>
-            <div class="post-info">
-              <span>
-                2021-08-25
-              </span>
-              <span>
-                2 min read
-              </span>
-              
-                <a href="https://betaincao.github.io/tag/golang/" class="post-tag">
-                  # golang
-                </a>
-              
-            </div>
+          
+          <h2 class="post-title">golang - channel</h2>
+          <div class="post-info post-detail-info">
+            <span><i class="icon-calendar-outline"></i> 2021-08-25</span>
             
-            <div class="post-content-wrapper">
-              <div class="post-content">
-                <p>go语言中最常见的、也是经常被人提及的设计模式--不要使用共享内存的方式通信，应该通过通信的方式共享内存。</p>
+              <span>
+                <i class="icon-pricetags-outline"></i>
+                
+                  <a href="https://rocky1996.github.io/tag/golang/">
+                    golang
+                    
+                  </a>
+                
+              </span>
+            
+          </div>
+          <div class="post-content">
+            <p>go语言中最常见的、也是经常被人提及的设计模式--不要使用共享内存的方式通信，应该通过通信的方式共享内存。</p>
 <h2 id="channel的特性">channel的特性</h2>
 <p>1、先入先出（FIFO）<br>
 2、无锁管道</p>
@@ -127,86 +121,57 @@ channel的特性
 </code></pre>
 <p>创建了一个无缓冲channel，然后往这个channel发送数据。因为程序中没有读操作ready，所以发送的时候会阻塞。</p>
 
-              </div>
-              <div class="toc-container">
-                <ul class="markdownIt-TOC">
-<li>
-<ul>
-<li><a href="#channel%E7%9A%84%E7%89%B9%E6%80%A7">channel的特性</a></li>
-<li><a href="#%E5%85%B3%E9%97%ADchannel%E7%9A%84%E6%96%B9%E5%BC%8F">关闭channel的方式</a></li>
-<li><a href="#%E6%9C%89%E7%BC%93%E5%AD%98%E6%97%A0%E7%BC%93%E5%AD%98%E7%AE%A1%E9%81%93">有缓存&amp;无缓存管道</a></li>
-<li><a href="#channel%E7%9A%84%E5%BA%95%E5%B1%82%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86">channel的底层实现原理</a></li>
-</ul>
-</li>
-</ul>
-
-              </div>
-            </div>
-          </article>
+          </div>
         </div>
 
         
           <div class="next-post">
-            <div class="next">下一篇</div>
-            <a href="https://betaincao.github.io/post/hello-world/">
+            <a class="purple-link" href="https://rocky1996.github.io/post/hello-world/">
               <h3 class="post-title">
-                Hello World
+                下一篇：Hello World
               </h3>
             </a>
           </div>
-        
+          
+      </div>
 
-        
+      
 
-        <div class="site-footer">
-  Powered by  <a href="https://github.com/betaincao"> betaincao</a>
-  <a class="rss" href="https://betaincao.github.io//atom.xml" target="_blank">
-    <i class="ri-rss-line"></i> RSS
-  </a>
+      <div class="site-footer">
+  <div class="slogan">一只猫工作室承接定制开发微信小程序、app开发、网站开发等。我们拥有优秀的团队，一流的服务，专业的技术。为您节省成本，提高效率！有需求的欢迎咨询！</div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+  Powered by  <a href="http://acatoffice.cn"> 一只猫（ACAT）工作室</a> | <a class="rss" href="https://rocky1996.github.io//atom.xml" target="_blank">RSS</a>
 </div>
 
-      </div>
+
     </div>
+    <script type="application/javascript">
 
-    <script>
-      hljs.initHighlightingOnLoad()
+hljs.initHighlightingOnLoad()
 
-      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
 
-      // This should probably be throttled.
-      // Especially because it triggers during smooth scrolling.
-      // https://lodash.com/docs/4.17.10#throttle
-      // You could do like...
-      // window.addEventListener("scroll", () => {
-      //    _.throttle(doThatStuff, 100);
-      // });
-      // Only not doing it here to keep this Pen dependency-free.
+</script>
 
-      window.addEventListener("scroll", event => {
-        let fromTop = window.scrollY;
 
-        mainNavLinks.forEach((link, index) => {
-          let section = document.getElementById(decodeURI(link.hash).substring(1));
-          let nextSection = null
-          if (mainNavLinks[index + 1]) {
-            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
-          }
-          if (section.offsetTop <= fromTop) {
-            if (nextSection) {
-              if (nextSection.offsetTop > fromTop) {
-                link.classList.add("current");
-              } else {
-                link.classList.remove("current");    
-              }
-            } else {
-              link.classList.add("current");
-            }
-          } else {
-            link.classList.remove("current");
-          }
-        });
-      });
 
-    </script>
+
   </body>
 </html>

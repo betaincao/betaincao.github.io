@@ -1,82 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://betaincao.github.io/</id>
-    <title>BetainCao</title>
-    <updated>2022-09-26T02:35:01.447Z</updated>
+    <id>https://rocky1996.github.io/</id>
+    <title>一只猫（ACAT）工作室</title>
+    <updated>2022-10-12T10:04:31.208Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://betaincao.github.io/"/>
-    <link rel="self" href="https://betaincao.github.io/atom.xml"/>
-    <subtitle>云之道，云知道。</subtitle>
-    <logo>https://betaincao.github.io/images/avatar.png</logo>
-    <icon>https://betaincao.github.io/favicon.ico</icon>
-    <rights>All rights reserved 2022, BetainCao</rights>
+    <link rel="alternate" href="https://rocky1996.github.io/"/>
+    <link rel="self" href="https://rocky1996.github.io/atom.xml"/>
+    <subtitle>一只猫工作室承接定制开发微信小程序、app开发、网站开发等。我们拥有优秀的团队，一流的服务，专业的技术。为您节省成本，提高效率！有需求的欢迎咨询！</subtitle>
+    <logo>https://rocky1996.github.io/images/avatar.png</logo>
+    <icon>https://rocky1996.github.io/favicon.ico</icon>
+    <rights>All rights reserved 2022, 一只猫（ACAT）工作室</rights>
     <entry>
         <title type="html"><![CDATA[各种异地组网方案]]></title>
-        <id>https://betaincao.github.io/post/ge-chong-yi-di-zu-wang-fang-an/</id>
-        <link href="https://betaincao.github.io/post/ge-chong-yi-di-zu-wang-fang-an/">
+        <id>https://rocky1996.github.io/post/ge-chong-yi-di-zu-wang-fang-an/</id>
+        <link href="https://rocky1996.github.io/post/ge-chong-yi-di-zu-wang-fang-an/">
         </link>
         <updated>2022-09-26T02:34:44.000Z</updated>
     </entry>
     <entry>
         <title type="html"><![CDATA[docker常用命令]]></title>
-        <id>https://betaincao.github.io/post/docker-chang-yong-ming-ling/</id>
-        <link href="https://betaincao.github.io/post/docker-chang-yong-ming-ling/">
+        <id>https://rocky1996.github.io/post/docker-chang-yong-ming-ling/</id>
+        <link href="https://rocky1996.github.io/post/docker-chang-yong-ming-ling/">
         </link>
         <updated>2022-07-11T06:48:15.000Z</updated>
     </entry>
     <entry>
         <title type="html"><![CDATA[记录自己常用的容器镜像和启动命令]]></title>
-        <id>https://betaincao.github.io/post/ji-lu-zi-ji-chang-yong-de-rong-qi-jing-xiang-he-qi-dong-ming-ling/</id>
-        <link href="https://betaincao.github.io/post/ji-lu-zi-ji-chang-yong-de-rong-qi-jing-xiang-he-qi-dong-ming-ling/">
+        <id>https://rocky1996.github.io/post/ji-lu-zi-ji-chang-yong-de-rong-qi-jing-xiang-he-qi-dong-ming-ling/</id>
+        <link href="https://rocky1996.github.io/post/ji-lu-zi-ji-chang-yong-de-rong-qi-jing-xiang-he-qi-dong-ming-ling/">
         </link>
         <updated>2022-06-20T03:10:20.000Z</updated>
     </entry>
     <entry>
         <title type="html"><![CDATA[【操作系统】内存满了，会发生什么？]]></title>
-        <id>https://betaincao.github.io/post/cao-zuo-xi-tong-nei-cun-man-liao-hui-fa-sheng-shi-me/</id>
-        <link href="https://betaincao.github.io/post/cao-zuo-xi-tong-nei-cun-man-liao-hui-fa-sheng-shi-me/">
+        <id>https://rocky1996.github.io/post/cao-zuo-xi-tong-nei-cun-man-liao-hui-fa-sheng-shi-me/</id>
+        <link href="https://rocky1996.github.io/post/cao-zuo-xi-tong-nei-cun-man-liao-hui-fa-sheng-shi-me/">
         </link>
         <updated>2022-05-27T06:17:37.000Z</updated>
     </entry>
     <entry>
         <title type="html"><![CDATA[使用github action完成项目的CI/CD]]></title>
-        <id>https://betaincao.github.io/post/shi-yong-github-action-wan-cheng-xiang-mu-de-cicd/</id>
-        <link href="https://betaincao.github.io/post/shi-yong-github-action-wan-cheng-xiang-mu-de-cicd/">
+        <id>https://rocky1996.github.io/post/shi-yong-github-action-wan-cheng-xiang-mu-de-cicd/</id>
+        <link href="https://rocky1996.github.io/post/shi-yong-github-action-wan-cheng-xiang-mu-de-cicd/">
         </link>
         <updated>2022-05-10T03:35:44.000Z</updated>
     </entry>
     <entry>
         <title type="html"><![CDATA[git rebase]]></title>
-        <id>https://betaincao.github.io/post/git-rebase/</id>
-        <link href="https://betaincao.github.io/post/git-rebase/">
+        <id>https://rocky1996.github.io/post/git-rebase/</id>
+        <link href="https://rocky1996.github.io/post/git-rebase/">
         </link>
         <updated>2022-05-10T03:35:28.000Z</updated>
     </entry>
     <entry>
         <title type="html"><![CDATA[docker lifetime]]></title>
-        <id>https://betaincao.github.io/post/docker-lifetime/</id>
-        <link href="https://betaincao.github.io/post/docker-lifetime/">
+        <id>https://rocky1996.github.io/post/docker-lifetime/</id>
+        <link href="https://rocky1996.github.io/post/docker-lifetime/">
         </link>
         <updated>2021-11-16T06:15:52.000Z</updated>
     </entry>
     <entry>
         <title type="html"><![CDATA[编写自定义的kubernetes controller]]></title>
-        <id>https://betaincao.github.io/post/bian-xie-zi-ding-yi-de-kubernetes-controller/</id>
-        <link href="https://betaincao.github.io/post/bian-xie-zi-ding-yi-de-kubernetes-controller/">
+        <id>https://rocky1996.github.io/post/bian-xie-zi-ding-yi-de-kubernetes-controller/</id>
+        <link href="https://rocky1996.github.io/post/bian-xie-zi-ding-yi-de-kubernetes-controller/">
         </link>
         <updated>2021-11-08T08:09:16.000Z</updated>
     </entry>
     <entry>
         <title type="html"><![CDATA[Hello，1024]]></title>
-        <id>https://betaincao.github.io/post/hello1024/</id>
-        <link href="https://betaincao.github.io/post/hello1024/">
+        <id>https://rocky1996.github.io/post/hello1024/</id>
+        <link href="https://rocky1996.github.io/post/hello1024/">
         </link>
         <updated>2021-10-24T11:53:27.000Z</updated>
     </entry>
     <entry>
         <title type="html"><![CDATA[跟北京说个再见吧]]></title>
-        <id>https://betaincao.github.io/post/gen-bei-jing-shuo-ge-zai-jian-ba/</id>
-        <link href="https://betaincao.github.io/post/gen-bei-jing-shuo-ge-zai-jian-ba/">
+        <id>https://rocky1996.github.io/post/gen-bei-jing-shuo-ge-zai-jian-ba/</id>
+        <link href="https://rocky1996.github.io/post/gen-bei-jing-shuo-ge-zai-jian-ba/">
         </link>
         <updated>2021-09-16T06:53:28.000Z</updated>
     </entry>

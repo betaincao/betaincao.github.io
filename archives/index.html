@@ -1,136 +1,152 @@
 <html>
   <head>
-    <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>BetainCao</title>
-<link rel="shortcut icon" href="https://betaincao.github.io//favicon.ico?v=1664159695890">
-<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
-<link rel="stylesheet" href="https://betaincao.github.io//styles/main.css">
-<link rel="alternate" type="application/atom+xml" title="BetainCao - Atom Feed" href="https://betaincao.github.io//atom.xml">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+    
+<meta charset="utf-8" >
+
+<title>一只猫（ACAT）工作室</title>
+<meta name="description" content="一只猫工作室承接定制开发微信小程序、app开发、网站开发等。我们拥有优秀的团队，一流的服务，专业的技术。为您节省成本，提高效率！有需求的欢迎咨询！">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://rocky1996.github.io//favicon.ico?v=1665569058289">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://rocky1996.github.io//styles/main.css">
 
 
 
-    <meta name="description" content="云之道，云知道。" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+
   </head>
   <body>
-    <div class="main">
-      <div class="main-content">
-        <div class="site-header">
-  <a href="https://betaincao.github.io/">
-  <img class="avatar" src="https://betaincao.github.io//images/avatar.png?v=1664159695890" alt="">
-  </a>
-  <h1 class="site-title">
-    BetainCao
-  </h1>
-  <p class="site-description">
-    云之道，云知道。
-  </p>
-  <div class="menu-container">
-    
-      
-        <a href="/" class="menu">
-          首页
-        </a>
-      
-    
-      
-        <a href="/archives" class="menu">
-          归档
-        </a>
-      
-    
-      
-        <a href="/tags" class="menu">
-          标签
-        </a>
-      
-    
-      
-        <a href="/post/about" class="menu">
-          关于
-        </a>
-      
-    
-  </div>
-  <div class="social-container">
-    
-      
-        <a href="https://github.com/betaincao" target="_blank">
-          <i class="ri-github-line"></i>
-        </a>
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
+    <div id="app" class="main">
+      <div class="site-header-container">
+  <div class="site-header">
+    <div class="left">
+      <a href="https://rocky1996.github.io/">
+        <img class="avatar" src="https://rocky1996.github.io//images/avatar.png?v=1665569058289" alt="" width="32px" height="32px">
+      </a>
+      <a href="https://rocky1996.github.io/">
+        <h1 class="site-title">一只猫（ACAT）工作室</h1>
+      </a>
+    </div>
+    <div class="right">
+      <transition name="fade">
+        <i class="icon" :class="{ 'icon-close-outline': menuVisible, 'icon-menu-outline': !menuVisible }" @click="menuVisible = !menuVisible"></i>
+      </transition>
+    </div>
   </div>
 </div>
 
-    
+<transition name="fade">
+  <div class="menu-container" style="display: none;" v-show="menuVisible">
+    <div class="menu-list">
+      
         
+          <a href="/" class="menu purple-link">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="menu purple-link">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="menu purple-link">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="menu purple-link">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+</transition>
+
+
+        <div class="content-container">
+          
+          
 
 <div class="archives-container">
   
     <h2 class="year">2022</h2>
     
       
-        <a href="https://betaincao.github.io/post/ge-chong-yi-di-zu-wang-fang-an/" class="post">
-          <h2 class="post-title">
-            各种异地组网方案
-          </h2>
-          <div class="time">2022-09-26</div>
-        </a>
+        <article class="post">
+          <a href="https://rocky1996.github.io/post/ge-chong-yi-di-zu-wang-fang-an/">
+            <h2 class="post-title">
+              各种异地组网方案
+              <small>2022-09-26</small>
+            </h2>
+          </a>
+        </article>
       
     
       
-        <a href="https://betaincao.github.io/post/docker-chang-yong-ming-ling/" class="post">
-          <h2 class="post-title">
-            docker常用命令
-          </h2>
-          <div class="time">2022-07-11</div>
-        </a>
+        <article class="post">
+          <a href="https://rocky1996.github.io/post/docker-chang-yong-ming-ling/">
+            <h2 class="post-title">
+              docker常用命令
+              <small>2022-07-11</small>
+            </h2>
+          </a>
+        </article>
       
     
       
-        <a href="https://betaincao.github.io/post/ji-lu-zi-ji-chang-yong-de-rong-qi-jing-xiang-he-qi-dong-ming-ling/" class="post">
-          <h2 class="post-title">
-            记录自己常用的容器镜像和启动命令
-          </h2>
-          <div class="time">2022-06-20</div>
-        </a>
+        <article class="post">
+          <a href="https://rocky1996.github.io/post/ji-lu-zi-ji-chang-yong-de-rong-qi-jing-xiang-he-qi-dong-ming-ling/">
+            <h2 class="post-title">
+              记录自己常用的容器镜像和启动命令
+              <small>2022-06-20</small>
+            </h2>
+          </a>
+        </article>
       
     
       
-        <a href="https://betaincao.github.io/post/cao-zuo-xi-tong-nei-cun-man-liao-hui-fa-sheng-shi-me/" class="post">
-          <h2 class="post-title">
-            【操作系统】内存满了，会发生什么？
-          </h2>
-          <div class="time">2022-05-27</div>
-        </a>
+        <article class="post">
+          <a href="https://rocky1996.github.io/post/cao-zuo-xi-tong-nei-cun-man-liao-hui-fa-sheng-shi-me/">
+            <h2 class="post-title">
+              【操作系统】内存满了，会发生什么？
+              <small>2022-05-27</small>
+            </h2>
+          </a>
+        </article>
       
     
       
-        <a href="https://betaincao.github.io/post/shi-yong-github-action-wan-cheng-xiang-mu-de-cicd/" class="post">
-          <h2 class="post-title">
-            使用github action完成项目的CI/CD
-          </h2>
-          <div class="time">2022-05-10</div>
-        </a>
+        <article class="post">
+          <a href="https://rocky1996.github.io/post/shi-yong-github-action-wan-cheng-xiang-mu-de-cicd/">
+            <h2 class="post-title">
+              使用github action完成项目的CI/CD
+              <small>2022-05-10</small>
+            </h2>
+          </a>
+        </article>
       
     
       
-        <a href="https://betaincao.github.io/post/git-rebase/" class="post">
-          <h2 class="post-title">
-            git rebase
-          </h2>
-          <div class="time">2022-05-10</div>
-        </a>
+        <article class="post">
+          <a href="https://rocky1996.github.io/post/git-rebase/">
+            <h2 class="post-title">
+              git rebase
+              <small>2022-05-10</small>
+            </h2>
+          </a>
+        </article>
       
     
       
@@ -165,66 +181,80 @@
       
     
       
-        <a href="https://betaincao.github.io/post/docker-lifetime/" class="post">
-          <h2 class="post-title">
-            docker lifetime
-          </h2>
-          <div class="time">2021-11-16</div>
-        </a>
+        <article class="post">
+          <a href="https://rocky1996.github.io/post/docker-lifetime/">
+            <h2 class="post-title">
+              docker lifetime
+              <small>2021-11-16</small>
+            </h2>
+          </a>
+        </article>
       
     
       
-        <a href="https://betaincao.github.io/post/bian-xie-zi-ding-yi-de-kubernetes-controller/" class="post">
-          <h2 class="post-title">
-            编写自定义的kubernetes controller
-          </h2>
-          <div class="time">2021-11-08</div>
-        </a>
+        <article class="post">
+          <a href="https://rocky1996.github.io/post/bian-xie-zi-ding-yi-de-kubernetes-controller/">
+            <h2 class="post-title">
+              编写自定义的kubernetes controller
+              <small>2021-11-08</small>
+            </h2>
+          </a>
+        </article>
       
     
       
-        <a href="https://betaincao.github.io/post/hello1024/" class="post">
-          <h2 class="post-title">
-            Hello，1024
-          </h2>
-          <div class="time">2021-10-24</div>
-        </a>
+        <article class="post">
+          <a href="https://rocky1996.github.io/post/hello1024/">
+            <h2 class="post-title">
+              Hello，1024
+              <small>2021-10-24</small>
+            </h2>
+          </a>
+        </article>
       
     
       
-        <a href="https://betaincao.github.io/post/gen-bei-jing-shuo-ge-zai-jian-ba/" class="post">
-          <h2 class="post-title">
-            跟北京说个再见吧
-          </h2>
-          <div class="time">2021-09-16</div>
-        </a>
+        <article class="post">
+          <a href="https://rocky1996.github.io/post/gen-bei-jing-shuo-ge-zai-jian-ba/">
+            <h2 class="post-title">
+              跟北京说个再见吧
+              <small>2021-09-16</small>
+            </h2>
+          </a>
+        </article>
       
     
       
-        <a href="https://betaincao.github.io/post/2021-09-09/" class="post">
-          <h2 class="post-title">
-            写个社招的面经吧
-          </h2>
-          <div class="time">2021-09-09</div>
-        </a>
+        <article class="post">
+          <a href="https://rocky1996.github.io/post/2021-09-09/">
+            <h2 class="post-title">
+              写个社招的面经吧
+              <small>2021-09-09</small>
+            </h2>
+          </a>
+        </article>
       
     
       
-        <a href="https://betaincao.github.io/post/rong-qi-yu-jing-xiang/" class="post">
-          <h2 class="post-title">
-            容器与镜像
-          </h2>
-          <div class="time">2021-08-25</div>
-        </a>
+        <article class="post">
+          <a href="https://rocky1996.github.io/post/rong-qi-yu-jing-xiang/">
+            <h2 class="post-title">
+              容器与镜像
+              <small>2021-08-25</small>
+            </h2>
+          </a>
+        </article>
       
     
       
-        <a href="https://betaincao.github.io/post/golang-channel/" class="post">
-          <h2 class="post-title">
-            golang - channel
-          </h2>
-          <div class="time">2021-08-25</div>
-        </a>
+        <article class="post">
+          <a href="https://rocky1996.github.io/post/golang-channel/">
+            <h2 class="post-title">
+              golang - channel
+              <small>2021-08-25</small>
+            </h2>
+          </a>
+        </article>
       
     
       
@@ -259,32 +289,58 @@
       
     
       
-        <a href="https://betaincao.github.io/post/hello-world/" class="post">
-          <h2 class="post-title">
-            Hello World
-          </h2>
-          <div class="time">2020-07-06</div>
-        </a>
+        <article class="post">
+          <a href="https://rocky1996.github.io/post/hello-world/">
+            <h2 class="post-title">
+              Hello World
+              <small>2020-07-06</small>
+            </h2>
+          </a>
+        </article>
       
     
   
 </div>
 
+
+        </div>
+
+        <div class="site-footer">
+  <div class="slogan">一只猫工作室承接定制开发微信小程序、app开发、网站开发等。我们拥有优秀的团队，一流的服务，专业的技术。为您节省成本，提高效率！有需求的欢迎咨询！</div>
+  <div class="social-container">
     
-        <div class="pagination-container">
-  
-  
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+  Powered by  <a href="http://acatoffice.cn"> 一只猫（ACAT）工作室</a> | <a class="rss" href="https://rocky1996.github.io//atom.xml" target="_blank">RSS</a>
 </div>
 
-    
-        <div class="site-footer">
-  Powered by  <a href="https://github.com/betaincao"> betaincao</a>
-  <a class="rss" href="https://betaincao.github.io//atom.xml" target="_blank">
-    <i class="ri-rss-line"></i> RSS
-  </a>
-</div>
 
       </div>
+      <script type="application/javascript">
+
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
     </div>
   </body>
 </html>

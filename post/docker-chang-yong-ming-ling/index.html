@@ -1,101 +1,92 @@
+
+<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>docker常用命令 | BetainCao</title>
-<link rel="shortcut icon" href="https://betaincao.github.io//favicon.ico?v=1664159695890">
-<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
-<link rel="stylesheet" href="https://betaincao.github.io//styles/main.css">
-<link rel="alternate" type="application/atom+xml" title="docker常用命令 | BetainCao - Atom Feed" href="https://betaincao.github.io//atom.xml">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+    
+<meta charset="utf-8" >
+
+<title>docker常用命令 | 一只猫（ACAT）工作室</title>
+<meta name="description" content="一只猫工作室承接定制开发微信小程序、app开发、网站开发等。我们拥有优秀的团队，一流的服务，专业的技术。为您节省成本，提高效率！有需求的欢迎咨询！">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://rocky1996.github.io//favicon.ico?v=1665569058289">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://rocky1996.github.io//styles/main.css">
 
 
 
-    <meta name="description" content="docker ps 查看正在运行的docker容器，相当于操作系统查看进程命令；
-docker ps -a 查看所有运行过的容器，包括已经停止运行的容器；
-docker stop  停止某个正在运行的容器
-docker start   启动..." />
-    <meta name="keywords" content="" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
-    <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+
   </head>
   <body>
-    <div class="main">
-      <div class="main-content">
-        <div class="site-header">
-  <a href="https://betaincao.github.io/">
-  <img class="avatar" src="https://betaincao.github.io//images/avatar.png?v=1664159695890" alt="">
-  </a>
-  <h1 class="site-title">
-    BetainCao
-  </h1>
-  <p class="site-description">
-    云之道，云知道。
-  </p>
-  <div class="menu-container">
-    
-      
-        <a href="/" class="menu">
-          首页
-        </a>
-      
-    
-      
-        <a href="/archives" class="menu">
-          归档
-        </a>
-      
-    
-      
-        <a href="/tags" class="menu">
-          标签
-        </a>
-      
-    
-      
-        <a href="/post/about" class="menu">
-          关于
-        </a>
-      
-    
-  </div>
-  <div class="social-container">
-    
-      
-        <a href="https://github.com/betaincao" target="_blank">
-          <i class="ri-github-line"></i>
-        </a>
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
+    <div id="app" class="main">
+      <div class="site-header-container">
+  <div class="site-header">
+    <div class="left">
+      <a href="https://rocky1996.github.io/">
+        <img class="avatar" src="https://rocky1996.github.io//images/avatar.png?v=1665569058289" alt="" width="32px" height="32px">
+      </a>
+      <a href="https://rocky1996.github.io/">
+        <h1 class="site-title">一只猫（ACAT）工作室</h1>
+      </a>
+    </div>
+    <div class="right">
+      <transition name="fade">
+        <i class="icon" :class="{ 'icon-close-outline': menuVisible, 'icon-menu-outline': !menuVisible }" @click="menuVisible = !menuVisible"></i>
+      </transition>
+    </div>
   </div>
 </div>
 
+<transition name="fade">
+  <div class="menu-container" style="display: none;" v-show="menuVisible">
+    <div class="menu-list">
+      
+        
+          <a href="/" class="menu purple-link">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="menu purple-link">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="menu purple-link">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="menu purple-link">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+</transition>
+
+
+      <div class="content-container">
         <div class="post-detail">
-          <article class="post">
-            <h2 class="post-title">
-              docker常用命令
-            </h2>
-            <div class="post-info">
-              <span>
-                2022-07-11
-              </span>
-              <span>
-                1 min read
-              </span>
-              
-            </div>
+          
+          <h2 class="post-title">docker常用命令</h2>
+          <div class="post-info post-detail-info">
+            <span><i class="icon-calendar-outline"></i> 2022-07-11</span>
             
-            <div class="post-content-wrapper">
-              <div class="post-content">
-                <p>docker ps 查看正在运行的docker容器，相当于操作系统查看进程命令；<br>
+          </div>
+          <div class="post-content">
+            <p>docker ps 查看正在运行的docker容器，相当于操作系统查看进程命令；<br>
 docker ps -a 查看所有运行过的容器，包括已经停止运行的容器；<br>
 docker stop <container id> 停止某个正在运行的容器<br>
 docker start  <container id> 启动某个已经停止的容器<br>
@@ -107,76 +98,57 @@ docker rm <container id> 删除某个未来运行状态的容器<br>
 docker rmi <image id> 删除某个镜像，只能删除未运行过的镜像<br>
 docker inspect <image id> 查看某个镜像的详细信息，包括层目录等等</p>
 
-              </div>
-              <div class="toc-container">
-                
-              </div>
-            </div>
-          </article>
+          </div>
         </div>
 
         
           <div class="next-post">
-            <div class="next">下一篇</div>
-            <a href="https://betaincao.github.io/post/ji-lu-zi-ji-chang-yong-de-rong-qi-jing-xiang-he-qi-dong-ming-ling/">
+            <a class="purple-link" href="https://rocky1996.github.io/post/ji-lu-zi-ji-chang-yong-de-rong-qi-jing-xiang-he-qi-dong-ming-ling/">
               <h3 class="post-title">
-                记录自己常用的容器镜像和启动命令
+                下一篇：记录自己常用的容器镜像和启动命令
               </h3>
             </a>
           </div>
-        
+          
+      </div>
 
-        
+      
 
-        <div class="site-footer">
-  Powered by  <a href="https://github.com/betaincao"> betaincao</a>
-  <a class="rss" href="https://betaincao.github.io//atom.xml" target="_blank">
-    <i class="ri-rss-line"></i> RSS
-  </a>
+      <div class="site-footer">
+  <div class="slogan">一只猫工作室承接定制开发微信小程序、app开发、网站开发等。我们拥有优秀的团队，一流的服务，专业的技术。为您节省成本，提高效率！有需求的欢迎咨询！</div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+  Powered by  <a href="http://acatoffice.cn"> 一只猫（ACAT）工作室</a> | <a class="rss" href="https://rocky1996.github.io//atom.xml" target="_blank">RSS</a>
 </div>
 
-      </div>
+
     </div>
+    <script type="application/javascript">
 
-    <script>
-      hljs.initHighlightingOnLoad()
+hljs.initHighlightingOnLoad()
 
-      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
 
-      // This should probably be throttled.
-      // Especially because it triggers during smooth scrolling.
-      // https://lodash.com/docs/4.17.10#throttle
-      // You could do like...
-      // window.addEventListener("scroll", () => {
-      //    _.throttle(doThatStuff, 100);
-      // });
-      // Only not doing it here to keep this Pen dependency-free.
+</script>
 
-      window.addEventListener("scroll", event => {
-        let fromTop = window.scrollY;
 
-        mainNavLinks.forEach((link, index) => {
-          let section = document.getElementById(decodeURI(link.hash).substring(1));
-          let nextSection = null
-          if (mainNavLinks[index + 1]) {
-            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
-          }
-          if (section.offsetTop <= fromTop) {
-            if (nextSection) {
-              if (nextSection.offsetTop > fromTop) {
-                link.classList.add("current");
-              } else {
-                link.classList.remove("current");    
-              }
-            } else {
-              link.classList.add("current");
-            }
-          } else {
-            link.classList.remove("current");
-          }
-        });
-      });
 
-    </script>
+
   </body>
 </html>
