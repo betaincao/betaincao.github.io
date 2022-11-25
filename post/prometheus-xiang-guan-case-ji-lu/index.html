@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>docker常用命令 | 一只猫（ACAT）工作室</title>
+<title>prometheus相关case记录 | 一只猫（ACAT）工作室</title>
 <meta name="description" content="一只猫工作室承接定制开发微信小程序、app开发、网站开发等。我们拥有优秀的团队，一流的服务，专业的技术。为您节省成本，提高效率！有需求的欢迎咨询！">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -81,24 +81,14 @@
       <div class="sm-12 md-8 col">
         <div class="paper">
           <article class="article">
-            <h1>docker常用命令</h1>
+            <h1>prometheus相关case记录</h1>
             <p class="article-meta">
-              2022-07-11
+              2022-11-25
               
             </p>
             
             <div class="post-content">
-              <p>docker ps 查看正在运行的docker容器，相当于操作系统查看进程命令；<br>
-docker ps -a 查看所有运行过的容器，包括已经停止运行的容器；<br>
-docker stop <container id> 停止某个正在运行的容器<br>
-docker start  <container id> 启动某个已经停止的容器<br>
-docker images 获取本地所有的容器镜像<br>
-docker run <image id> 运行某个镜像<br>
-docker logs -f <container id> 查看容器运行日志<br>
-docker exec -it <container id> /bin/bash 进入一个正在运行的镜像内<br>
-docker rm <container id> 删除某个未来运行状态的容器<br>
-docker rmi <image id> 删除某个镜像，只能删除未运行过的镜像<br>
-docker inspect <image id> 查看某个镜像的详细信息，包括层目录等等</p>
+              <p>1、kube-system/kube-state-metrics指标数据太多，未分片导致拉取不到指标，通过分片、增加kube-system/kube-state-metrics副本数解决。</p>
 
             </div>
           </article>
@@ -109,9 +99,9 @@ docker inspect <image id> 查看某个镜像的详细信息，包括层目录等
               <div class="next">
                 下一篇
               </div>
-              <a href="https://rocky1996.github.io/post/ji-lu-zi-ji-chang-yong-de-rong-qi-jing-xiang-he-qi-dong-ming-ling/">
+              <a href="https://rocky1996.github.io/post/ge-chong-yi-di-zu-wang-fang-an/">
                 <h3 class="post-title">
-                  记录自己常用的容器镜像和启动命令
+                  各种异地组网方案
                 </h3>
               </a>
             </div>
@@ -226,7 +216,7 @@ docker inspect <image id> 查看某个镜像的详细信息，包括层目录等
     </div>
     <div class="row">
       
-        <a href="https://rocky1996.github.io/tag/docker/" class="badge warning">
+        <a href="https://rocky1996.github.io/tag/docker/" class="badge secondary">
           docker
         </a>
       
@@ -238,11 +228,11 @@ docker inspect <image id> 查看某个镜像的详细信息，包括层目录等
           cicd
         </a>
       
-        <a href="https://rocky1996.github.io/tag/kubernetes/" class="badge ">
+        <a href="https://rocky1996.github.io/tag/kubernetes/" class="badge secondary">
           kubernetes
         </a>
       
-        <a href="https://rocky1996.github.io/tag/golang/" class="badge secondary">
+        <a href="https://rocky1996.github.io/tag/golang/" class="badge success">
           golang
         </a>
       
@@ -250,7 +240,7 @@ docker inspect <image id> 查看某个镜像的详细信息，包括层目录等
           随想
         </a>
       
-        <a href="https://rocky1996.github.io/tag/interview/" class="badge warning">
+        <a href="https://rocky1996.github.io/tag/interview/" class="badge secondary">
           面试
         </a>
       
