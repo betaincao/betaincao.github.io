@@ -1,98 +1,106 @@
-<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" >
-
-<title>容器与镜像 | 一只猫（ACAT）工作室</title>
-<meta name="description" content="一只猫工作室承接定制开发微信小程序、app开发、网站开发等。我们拥有优秀的团队，一流的服务，专业的技术。为您节省成本，提高效率！有需求的欢迎咨询！">
-
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<link rel="shortcut icon" href="https://rocky1996.github.io//favicon.ico?v=1669367031194">
-
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="stylesheet" href="https://unpkg.com/papercss@1.6.1/dist/paper.min.css" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
-<link rel="stylesheet" href="https://rocky1996.github.io//styles/main.css">
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>容器与镜像 | BetainCao</title>
+<link rel="shortcut icon" href="https://betaincao.github.io//favicon.ico?v=1672297201999">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://betaincao.github.io//styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="容器与镜像 | BetainCao - Atom Feed" href="https://betaincao.github.io//atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
-<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
 
-
-<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-
-
+    <meta name="description" content="什么是容器？
+容器是一个视图隔离、资源可限制、独立文件系统的进程集合。
+视图隔离
+所谓“视图隔离”就是能够看到部分进程以及具有独立的主机名等；因为进程之间相互可见并且可以相互通信，使用Namespace技术来实现进程在资源上的视图隔离。
+资..." />
+    <meta name="keywords" content="docker" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
   </head>
   <body>
-  
-    <nav class="navbar border fixed split-nav">
-  <div class="nav-brand">
-    <h3><a href="https://rocky1996.github.io/">一只猫（ACAT）工作室</a></h3>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://betaincao.github.io/">
+  <img class="avatar" src="https://betaincao.github.io//images/avatar.png?v=1672297201999" alt="">
+  </a>
+  <h1 class="site-title">
+    BetainCao
+  </h1>
+  <p class="site-description">
+    云之道，云知道。
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives/" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags/" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about/" class="menu">
+          关于
+        </a>
+      
+    
   </div>
-  <div class="collapsible">
-    <input id="collapsible1" type="checkbox" name="collapsible1">
-    <button>
-      <label for="collapsible1">
-        <div class="bar1"></div>
-        <div class="bar2"></div>
-        <div class="bar3"></div>
-      </label>
-    </button>
-    <div class="collapsible-body">
-      <ul class="inline">
-        
-          <li>
-            
-              <a href="/" class="menu">
-                首页
-              </a>
-            
-          </li>
-        
-          <li>
-            
-              <a href="/archives/" class="menu">
-                工作室简介
-              </a>
-            
-          </li>
-        
-          <li>
-            
-              <a href="/tags/" class="menu">
-                解决方案
-              </a>
-            
-          </li>
-        
-          <li>
-            
-              <a href="/post/about/" class="menu">
-                联系我们
-              </a>
-            
-          </li>
-        
-      </ul>
-    </div>
+  <div class="social-container">
+    
+      
+        <a href="https://github.com/betaincao" target="_blank">
+          <i class="ri-github-line"></i>
+        </a>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
   </div>
-</nav>
+</div>
 
-    <div id="top" class="row site">
-      <div class="sm-12 md-8 col">
-        <div class="paper">
-          <article class="article">
-            <h1>容器与镜像</h1>
-            <p class="article-meta">
-              2021-08-25
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              容器与镜像
+            </h2>
+            <div class="post-info">
+              <span>
+                2021-08-25
+              </span>
+              <span>
+                2 min read
+              </span>
               
-                <a href="https://rocky1996.github.io/tag/docker/" class="badge secondary">
-                  docker
+                <a href="https://betaincao.github.io/tag/docker/" class="post-tag">
+                  # docker
                 </a>
               
-            </p>
+            </div>
             
-            <div class="post-content">
-              <h2 id="什么是容器">什么是容器？</h2>
+            <div class="post-content-wrapper">
+              <div class="post-content">
+                <h2 id="什么是容器">什么是容器？</h2>
 <p>容器是一个<strong>视图隔离</strong>、<strong>资源可限制</strong>、<strong>独立文件系统</strong>的进程集合。</p>
 <h3 id="视图隔离">视图隔离</h3>
 <p>所谓“视图隔离”就是能够看到部分进程以及具有独立的主机名等；因为进程之间相互可见并且可以相互通信，使用Namespace技术来实现进程在资源上的视图隔离。</p>
@@ -121,192 +129,112 @@ changeset的<strong>分层</strong>和<strong>复用</strong></p>
 <h3 id="moby-容器引擎架构">moby 容器引擎架构</h3>
 <p>moby daemon锁依赖的最重要的组件是containerd，containerd 是一个容器运行时管理引擎，其独立于 moby daemon ，可以对上提供容器、镜像的相关管理。<br>
 containerd 底层有 containerd shim 模块，其类似于一个守护进程。<br>
-<img src="https://rocky1996.github.io//post-images/1629874274977.jpg" alt="" loading="lazy"><br>
+<img src="https://betaincao.github.io//post-images/1629874274977.jpg" alt="" loading="lazy"><br>
 containerd<br>
 容器运行时</p>
 <h2 id="容器-vs-vm">容器 VS VM</h2>
 <p>容器是</p>
 
+              </div>
+              <div class="toc-container">
+                <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E4%BB%80%E4%B9%88%E6%98%AF%E5%AE%B9%E5%99%A8">什么是容器？</a>
+<ul>
+<li><a href="#%E8%A7%86%E5%9B%BE%E9%9A%94%E7%A6%BB">视图隔离</a></li>
+<li><a href="#%E8%B5%84%E6%BA%90%E5%8F%AF%E9%99%90%E5%88%B6">资源可限制</a></li>
+<li><a href="#%E7%8B%AC%E7%AB%8B%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F">独立文件系统</a></li>
+</ul>
+</li>
+<li><a href="#%E4%BB%80%E4%B9%88%E6%98%AF%E9%95%9C%E5%83%8F">什么是镜像？</a>
+<ul>
+<li><a href="#changeset%E7%9A%84%E5%88%86%E5%B1%82%E5%92%8C%E5%A4%8D%E7%94%A8%E4%BC%98%E5%8A%BF">changeset的分层和复用优势</a></li>
+</ul>
+</li>
+<li><a href="#%E5%AE%B9%E5%99%A8%E8%BF%90%E8%A1%8C%E6%97%B6%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F">容器运行时的生命周期</a>
+<ul>
+<li><a href="#%E5%8D%95%E8%BF%9B%E7%A8%8B%E6%A8%A1%E5%9E%8B">单进程模型</a></li>
+<li><a href="#%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96">数据持久化</a></li>
+</ul>
+</li>
+<li><a href="#%E5%AE%B9%E5%99%A8%E9%A1%B9%E7%9B%AE%E6%9E%B6%E6%9E%84">容器项目架构</a>
+<ul>
+<li><a href="#moby-%E5%AE%B9%E5%99%A8%E5%BC%95%E6%93%8E%E6%9E%B6%E6%9E%84">moby 容器引擎架构</a></li>
+</ul>
+</li>
+<li><a href="#%E5%AE%B9%E5%99%A8-vs-vm">容器 VS VM</a></li>
+</ul>
+</li>
+</ul>
+
+              </div>
             </div>
           </article>
         </div>
-        <div class="paper" data-aos="fade-in">
-          
-            <div class="next-post">
-              <div class="next">
-                下一篇
-              </div>
-              <a href="https://rocky1996.github.io/post/golang-channel/">
-                <h3 class="post-title">
-                  golang - channel
-                </h3>
-              </a>
-            </div>
-          
-        </div>
-        
-      </div>
 
-      <div class="sm-12 md-4 col sidebar">
-  <div class="paper info-container">
-    <img src="https://rocky1996.github.io//images/avatar.png?v=1669367031194" class="no-responsive avatar">
-    <div class="text-muted">一只猫工作室承接定制开发微信小程序、app开发、网站开发等。我们拥有优秀的团队，一流的服务，专业的技术。为您节省成本，提高效率！有需求的欢迎咨询！</div>
-    <div class="social-container">
-      
         
-      
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://betaincao.github.io/post/golang-channel/">
+              <h3 class="post-title">
+                golang - channel
+              </h3>
+            </a>
+          </div>
         
-      
+
         
-      
-        
-      
-        
-      
-    </div>
-  </div>
-  <div class="paper">
-    <div class="sidebar-title">
-      最新文章
-    </div>
-    <div class="row">
-      <ul>
-        
-          
-            <li>
-              <a href="https://rocky1996.github.io/post/prometheus-xiang-guan-case-ji-lu/">prometheus相关case记录</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="https://rocky1996.github.io/post/ge-chong-yi-di-zu-wang-fang-an/">各种异地组网方案</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="https://rocky1996.github.io/post/docker-chang-yong-ming-ling/">docker常用命令</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="https://rocky1996.github.io/post/ji-lu-zi-ji-chang-yong-de-rong-qi-jing-xiang-he-qi-dong-ming-ling/">记录自己常用的容器镜像和启动命令</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="https://rocky1996.github.io/post/cao-zuo-xi-tong-nei-cun-man-liao-hui-fa-sheng-shi-me/">【操作系统】内存满了，会发生什么？</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="https://rocky1996.github.io/post/shi-yong-github-action-wan-cheng-xiang-mu-de-cicd/">使用github action完成项目的CI/CD</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="https://rocky1996.github.io/post/git-rebase/">git rebase</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="https://rocky1996.github.io/post/docker-lifetime/">docker lifetime</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="https://rocky1996.github.io/post/bian-xie-zi-ding-yi-de-kubernetes-controller/">编写自定义的kubernetes controller</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="https://rocky1996.github.io/post/hello1024/">Hello，1024</a>
-            </li>
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-      </ul>
-    </div>
-  </div>
-  <div class="paper">
-    <div class="sidebar-title">
-      标签列表
-    </div>
-    <div class="row">
-      
-        <a href="https://rocky1996.github.io/tag/docker/" class="badge warning">
-          docker
-        </a>
-      
-        <a href="https://rocky1996.github.io/tag/qS5pdMHaT/" class="badge secondary">
-          操作系统
-        </a>
-      
-        <a href="https://rocky1996.github.io/tag/R-OGo86G-/" class="badge warning">
-          cicd
-        </a>
-      
-        <a href="https://rocky1996.github.io/tag/kubernetes/" class="badge secondary">
-          kubernetes
-        </a>
-      
-        <a href="https://rocky1996.github.io/tag/golang/" class="badge warning">
-          golang
-        </a>
-      
-        <a href="https://rocky1996.github.io/tag/8wT4OQIBC/" class="badge success">
-          随想
-        </a>
-      
-        <a href="https://rocky1996.github.io/tag/interview/" class="badge ">
-          面试
-        </a>
-      
-        <a href="https://rocky1996.github.io/tag/hello-world/" class="badge secondary">
-          hello-world
-        </a>
-      
-    </div>
-  </div>
-  <div class="paper">
-    Powered by  <a href="http://acatoffice.cn"> 一只猫（ACAT）工作室</a> | <a class="rss" href="https://rocky1996.github.io//atom.xml" target="_blank">RSS</a>
-  </div>
+
+        <div class="site-footer">
+  Powered by  <a href="betaincao.github.io"> betaincao</a>
+  <a class="rss" href="https://betaincao.github.io//atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
 </div>
 
-
+      </div>
     </div>
 
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      hljs.initHighlightingOnLoad()
 
-<script type="application/javascript">
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
 
-AOS.init();
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
 
-hljs.initHighlightingOnLoad()
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
 
-</script>
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
 
-
-
-
+    </script>
   </body>
 </html>

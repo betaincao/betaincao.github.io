@@ -1,98 +1,108 @@
-<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" >
-
-<title>golang - channel | 一只猫（ACAT）工作室</title>
-<meta name="description" content="一只猫工作室承接定制开发微信小程序、app开发、网站开发等。我们拥有优秀的团队，一流的服务，专业的技术。为您节省成本，提高效率！有需求的欢迎咨询！">
-
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<link rel="shortcut icon" href="https://rocky1996.github.io//favicon.ico?v=1669367031194">
-
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="stylesheet" href="https://unpkg.com/papercss@1.6.1/dist/paper.min.css" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
-<link rel="stylesheet" href="https://rocky1996.github.io//styles/main.css">
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>golang - channel | BetainCao</title>
+<link rel="shortcut icon" href="https://betaincao.github.io//favicon.ico?v=1672297201999">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://betaincao.github.io//styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="golang - channel | BetainCao - Atom Feed" href="https://betaincao.github.io//atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
-<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
 
-
-<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-
-
+    <meta name="description" content="go语言中最常见的、也是经常被人提及的设计模式--不要使用共享内存的方式通信，应该通过通信的方式共享内存。
+channel的特性
+1、先入先出（FIFO）
+2、无锁管道
+关闭channel的方式
+1、context
+2、done chann..." />
+    <meta name="keywords" content="golang" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
   </head>
   <body>
-  
-    <nav class="navbar border fixed split-nav">
-  <div class="nav-brand">
-    <h3><a href="https://rocky1996.github.io/">一只猫（ACAT）工作室</a></h3>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://betaincao.github.io/">
+  <img class="avatar" src="https://betaincao.github.io//images/avatar.png?v=1672297201999" alt="">
+  </a>
+  <h1 class="site-title">
+    BetainCao
+  </h1>
+  <p class="site-description">
+    云之道，云知道。
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives/" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags/" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about/" class="menu">
+          关于
+        </a>
+      
+    
   </div>
-  <div class="collapsible">
-    <input id="collapsible1" type="checkbox" name="collapsible1">
-    <button>
-      <label for="collapsible1">
-        <div class="bar1"></div>
-        <div class="bar2"></div>
-        <div class="bar3"></div>
-      </label>
-    </button>
-    <div class="collapsible-body">
-      <ul class="inline">
-        
-          <li>
-            
-              <a href="/" class="menu">
-                首页
-              </a>
-            
-          </li>
-        
-          <li>
-            
-              <a href="/archives/" class="menu">
-                工作室简介
-              </a>
-            
-          </li>
-        
-          <li>
-            
-              <a href="/tags/" class="menu">
-                解决方案
-              </a>
-            
-          </li>
-        
-          <li>
-            
-              <a href="/post/about/" class="menu">
-                联系我们
-              </a>
-            
-          </li>
-        
-      </ul>
-    </div>
+  <div class="social-container">
+    
+      
+        <a href="https://github.com/betaincao" target="_blank">
+          <i class="ri-github-line"></i>
+        </a>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
   </div>
-</nav>
+</div>
 
-    <div id="top" class="row site">
-      <div class="sm-12 md-8 col">
-        <div class="paper">
-          <article class="article">
-            <h1>golang - channel</h1>
-            <p class="article-meta">
-              2021-08-25
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              golang - channel
+            </h2>
+            <div class="post-info">
+              <span>
+                2021-08-25
+              </span>
+              <span>
+                2 min read
+              </span>
               
-                <a href="https://rocky1996.github.io/tag/golang/" class="badge success">
-                  golang
+                <a href="https://betaincao.github.io/tag/golang/" class="post-tag">
+                  # golang
                 </a>
               
-            </p>
+            </div>
             
-            <div class="post-content">
-              <p>go语言中最常见的、也是经常被人提及的设计模式--不要使用共享内存的方式通信，应该通过通信的方式共享内存。</p>
+            <div class="post-content-wrapper">
+              <div class="post-content">
+                <p>go语言中最常见的、也是经常被人提及的设计模式--不要使用共享内存的方式通信，应该通过通信的方式共享内存。</p>
 <h2 id="channel的特性">channel的特性</h2>
 <p>1、先入先出（FIFO）<br>
 2、无锁管道</p>
@@ -117,186 +127,86 @@
 </code></pre>
 <p>创建了一个无缓冲channel，然后往这个channel发送数据。因为程序中没有读操作ready，所以发送的时候会阻塞。</p>
 
+              </div>
+              <div class="toc-container">
+                <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#channel%E7%9A%84%E7%89%B9%E6%80%A7">channel的特性</a></li>
+<li><a href="#%E5%85%B3%E9%97%ADchannel%E7%9A%84%E6%96%B9%E5%BC%8F">关闭channel的方式</a></li>
+<li><a href="#%E6%9C%89%E7%BC%93%E5%AD%98%E6%97%A0%E7%BC%93%E5%AD%98%E7%AE%A1%E9%81%93">有缓存&amp;无缓存管道</a></li>
+<li><a href="#channel%E7%9A%84%E5%BA%95%E5%B1%82%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86">channel的底层实现原理</a></li>
+</ul>
+</li>
+</ul>
+
+              </div>
             </div>
           </article>
         </div>
-        <div class="paper" data-aos="fade-in">
-          
-            <div class="next-post">
-              <div class="next">
-                下一篇
-              </div>
-              <a href="https://rocky1996.github.io/post/hello-world/">
-                <h3 class="post-title">
-                  Hello World
-                </h3>
-              </a>
-            </div>
-          
-        </div>
-        
-      </div>
 
-      <div class="sm-12 md-4 col sidebar">
-  <div class="paper info-container">
-    <img src="https://rocky1996.github.io//images/avatar.png?v=1669367031194" class="no-responsive avatar">
-    <div class="text-muted">一只猫工作室承接定制开发微信小程序、app开发、网站开发等。我们拥有优秀的团队，一流的服务，专业的技术。为您节省成本，提高效率！有需求的欢迎咨询！</div>
-    <div class="social-container">
-      
         
-      
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://betaincao.github.io/post/hello-world/">
+              <h3 class="post-title">
+                Hello World
+              </h3>
+            </a>
+          </div>
         
-      
+
         
-      
-        
-      
-        
-      
-    </div>
-  </div>
-  <div class="paper">
-    <div class="sidebar-title">
-      最新文章
-    </div>
-    <div class="row">
-      <ul>
-        
-          
-            <li>
-              <a href="https://rocky1996.github.io/post/prometheus-xiang-guan-case-ji-lu/">prometheus相关case记录</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="https://rocky1996.github.io/post/ge-chong-yi-di-zu-wang-fang-an/">各种异地组网方案</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="https://rocky1996.github.io/post/docker-chang-yong-ming-ling/">docker常用命令</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="https://rocky1996.github.io/post/ji-lu-zi-ji-chang-yong-de-rong-qi-jing-xiang-he-qi-dong-ming-ling/">记录自己常用的容器镜像和启动命令</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="https://rocky1996.github.io/post/cao-zuo-xi-tong-nei-cun-man-liao-hui-fa-sheng-shi-me/">【操作系统】内存满了，会发生什么？</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="https://rocky1996.github.io/post/shi-yong-github-action-wan-cheng-xiang-mu-de-cicd/">使用github action完成项目的CI/CD</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="https://rocky1996.github.io/post/git-rebase/">git rebase</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="https://rocky1996.github.io/post/docker-lifetime/">docker lifetime</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="https://rocky1996.github.io/post/bian-xie-zi-ding-yi-de-kubernetes-controller/">编写自定义的kubernetes controller</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="https://rocky1996.github.io/post/hello1024/">Hello，1024</a>
-            </li>
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-      </ul>
-    </div>
-  </div>
-  <div class="paper">
-    <div class="sidebar-title">
-      标签列表
-    </div>
-    <div class="row">
-      
-        <a href="https://rocky1996.github.io/tag/docker/" class="badge secondary">
-          docker
-        </a>
-      
-        <a href="https://rocky1996.github.io/tag/qS5pdMHaT/" class="badge secondary">
-          操作系统
-        </a>
-      
-        <a href="https://rocky1996.github.io/tag/R-OGo86G-/" class="badge success">
-          cicd
-        </a>
-      
-        <a href="https://rocky1996.github.io/tag/kubernetes/" class="badge warning">
-          kubernetes
-        </a>
-      
-        <a href="https://rocky1996.github.io/tag/golang/" class="badge success">
-          golang
-        </a>
-      
-        <a href="https://rocky1996.github.io/tag/8wT4OQIBC/" class="badge secondary">
-          随想
-        </a>
-      
-        <a href="https://rocky1996.github.io/tag/interview/" class="badge secondary">
-          面试
-        </a>
-      
-        <a href="https://rocky1996.github.io/tag/hello-world/" class="badge secondary">
-          hello-world
-        </a>
-      
-    </div>
-  </div>
-  <div class="paper">
-    Powered by  <a href="http://acatoffice.cn"> 一只猫（ACAT）工作室</a> | <a class="rss" href="https://rocky1996.github.io//atom.xml" target="_blank">RSS</a>
-  </div>
+
+        <div class="site-footer">
+  Powered by  <a href="betaincao.github.io"> betaincao</a>
+  <a class="rss" href="https://betaincao.github.io//atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
 </div>
 
-
+      </div>
     </div>
 
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      hljs.initHighlightingOnLoad()
 
-<script type="application/javascript">
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
 
-AOS.init();
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
 
-hljs.initHighlightingOnLoad()
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
 
-</script>
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
 
-
-
-
+    </script>
   </body>
 </html>
