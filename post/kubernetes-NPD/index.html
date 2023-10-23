@@ -2,20 +2,20 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>记录自己常用的容器镜像和启动命令 | BetainCao</title>
+<title>Kubernetes节点故障检测和自愈 | BetainCao</title>
 <link rel="shortcut icon" href="https://betaincao.github.io//favicon.ico?v=1698029525581">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://betaincao.github.io//styles/main.css">
-<link rel="alternate" type="application/atom+xml" title="记录自己常用的容器镜像和启动命令 | BetainCao - Atom Feed" href="https://betaincao.github.io//atom.xml">
+<link rel="alternate" type="application/atom+xml" title="Kubernetes节点故障检测和自愈 | BetainCao - Atom Feed" href="https://betaincao.github.io//atom.xml">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
 
-    <meta name="description" content="mysql
-docker run -p 3306:3306 --name mysql \
--v /usr/local/docker/mysql/conf:/etc/mysql \
--v /usr/local/docker/mysql/log..." />
-    <meta name="keywords" content="docker" />
+    <meta name="description" content="节点故障
+Pod所在节点的内核、CRI运行时等出现问题，无法支持Pod的运行。针对这类故障，社区或商业的解决方案较多，例如社区的NPD项目、GKE的节点修复功能。
+NPD
+..." />
+    <meta name="keywords" content="kubernetes" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
     <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
   </head>
@@ -81,53 +81,29 @@ docker run -p 3306:3306 --name mysql \
         <div class="post-detail">
           <article class="post">
             <h2 class="post-title">
-              记录自己常用的容器镜像和启动命令
+              Kubernetes节点故障检测和自愈
             </h2>
             <div class="post-info">
               <span>
-                2022-06-20
+                2023-10-23
               </span>
               <span>
-                2 min read
+                1 min read
               </span>
               
-                <a href="https://betaincao.github.io/tag/docker/" class="post-tag">
-                  # docker
+                <a href="https://betaincao.github.io/tag/kubernetes/" class="post-tag">
+                  # kubernetes
                 </a>
               
             </div>
             
+              <img class="post-feature-image" src="https://betaincao.github.io//post-images/kubernetes-NPD.webp" alt="">
+            
             <div class="post-content-wrapper">
               <div class="post-content">
-                <h4 id="mysql">mysql</h4>
-<pre><code class="language-sh">docker run -p 3306:3306 --name mysql \
--v /usr/local/docker/mysql/conf:/etc/mysql \
--v /usr/local/docker/mysql/logs:/var/log/mysql \
--v /usr/local/docker/mysql/data:/var/lib/mysql \
--e MYSQL_ROOT_PASSWORD=123456 \
--d mysql:5.7
-</code></pre>
-<h4 id="phpmyadmin">phpmyadmin</h4>
-<pre><code class="language-sh">docker run --name phpmyadmin -d --link mysql -e PMA_HOST=&quot;mysql&quot; -p 6061:80 phpmyadmin/phpmyadmin
-</code></pre>
-<h4 id="elasticsearch">elasticsearch</h4>
-<pre><code class="language-sh">docker run -e  -d -p 9200:9200 -p 9300:9300 -v ${ES_SINGLE}/config/es-single.yml:/usr/share/elasticsearch/config/elasticsearch.yml -v ${ES_SINGLE}/data:/usr/share/elasticsearch/data --name es-single elasticsearch:7.6.2
-</code></pre>
-<h4 id="redis">redis</h4>
-<pre><code class="language-sh">docker run --name redis -d -p 6380:6379 redis
-</code></pre>
-<h4 id="prometheus">prometheus</h4>
-<pre><code class="language-sh">docker run  -d   -p 10050:9090   -v /opt/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml    prom/prometheus
-</code></pre>
-<h4 id="grafana">grafana</h4>
-<pre><code class="language-sh">docker run -d   -p 10051:3000   --name=grafana   -e &quot;GF_SERVER_ROOT_URL=http://grafana.server.name&quot;   -e &quot;GF_SECURITY_ADMIN_PASSWORD=admin&quot;   grafana/grafana
-</code></pre>
-<h4 id="kafka">kafka</h4>
-<pre><code class="language-sh">docker run -d --name kafka -p 15672:9092 -e KAFKA_BROKER_ID=0 -e KAFKA_ZOOKEEPER_CONNECT=zookeeper:5672 --link zookeeper -e KAFKA_ADVERTISED_LISTENERS=PLAINTEXT://47.93.185.66:15672 -e KAFKA_LISTENERS=PLAINTEXT://0.0.0.0:15672 -t wurstmeister/kafka
-</code></pre>
-<h4 id="http文件服务">http文件服务</h4>
-<pre><code class="language-sh">docker run -it --rm -p 7000:8000 -v $PWD:/app/public --name gohttpserver -d bushinvren1986/mygohttpserver:v1 --upload --delete
-</code></pre>
+                <h3 id="节点故障">节点故障</h3>
+<p>Pod所在节点的内核、CRI运行时等出现问题，无法支持Pod的运行。针对这类故障，社区或商业的解决方案较多，例如社区的NPD项目、GKE的节点修复功能。</p>
+<h3 id="npd">NPD</h3>
 
               </div>
               <div class="toc-container">
@@ -136,18 +112,8 @@ docker run -p 3306:3306 --name mysql \
 <ul>
 <li>
 <ul>
-<li>
-<ul>
-<li><a href="#mysql">mysql</a></li>
-<li><a href="#phpmyadmin">phpmyadmin</a></li>
-<li><a href="#elasticsearch">elasticsearch</a></li>
-<li><a href="#redis">redis</a></li>
-<li><a href="#prometheus">prometheus</a></li>
-<li><a href="#grafana">grafana</a></li>
-<li><a href="#kafka">kafka</a></li>
-<li><a href="#http%E6%96%87%E4%BB%B6%E6%9C%8D%E5%8A%A1">http文件服务</a></li>
-</ul>
-</li>
+<li><a href="#%E8%8A%82%E7%82%B9%E6%95%85%E9%9A%9C">节点故障</a></li>
+<li><a href="#npd">NPD</a></li>
 </ul>
 </li>
 </ul>
@@ -162,9 +128,9 @@ docker run -p 3306:3306 --name mysql \
         
           <div class="next-post">
             <div class="next">下一篇</div>
-            <a href="https://betaincao.github.io/post/cao-zuo-xi-tong-nei-cun-man-liao-hui-fa-sheng-shi-me/">
+            <a href="https://betaincao.github.io/post/prometheus-xiang-guan-case-ji-lu/">
               <h3 class="post-title">
-                【操作系统】内存满了，会发生什么？
+                prometheus相关case记录
               </h3>
             </a>
           </div>

@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://betaincao.github.io/</id>
     <title>BetainCao</title>
-    <updated>2023-10-23T02:48:17.326Z</updated>
+    <updated>2023-10-23T02:52:08.618Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://betaincao.github.io/"/>
     <link rel="self" href="https://betaincao.github.io/atom.xml"/>
@@ -10,6 +10,13 @@
     <logo>https://betaincao.github.io/images/avatar.png</logo>
     <icon>https://betaincao.github.io/favicon.ico</icon>
     <rights>All rights reserved 2023, BetainCao</rights>
+    <entry>
+        <title type="html"><![CDATA[Kubernetes节点故障检测和自愈]]></title>
+        <id>https://betaincao.github.io/post/kubernetes-NPD/</id>
+        <link href="https://betaincao.github.io/post/kubernetes-NPD/">
+        </link>
+        <updated>2023-10-23T02:48:49.000Z</updated>
+    </entry>
     <entry>
         <title type="html"><![CDATA[prometheus相关case记录]]></title>
         <id>https://betaincao.github.io/post/prometheus-xiang-guan-case-ji-lu/</id>
@@ -72,12 +79,5 @@
         <link href="https://betaincao.github.io/post/bian-xie-zi-ding-yi-de-kubernetes-controller/">
         </link>
         <updated>2021-11-08T08:09:16.000Z</updated>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Hello，1024]]></title>
-        <id>https://betaincao.github.io/post/hello1024/</id>
-        <link href="https://betaincao.github.io/post/hello1024/">
-        </link>
-        <updated>2021-10-24T11:53:27.000Z</updated>
     </entry>
 </feed>
