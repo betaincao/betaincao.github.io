@@ -2,14 +2,14 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://betaincao.github.io/</id>
     <title>BetainCao</title>
-    <updated>2022-12-29T07:27:52.535Z</updated>
+    <updated>2023-10-23T02:48:17.326Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://betaincao.github.io/"/>
     <link rel="self" href="https://betaincao.github.io/atom.xml"/>
     <subtitle>云之道，云知道。</subtitle>
     <logo>https://betaincao.github.io/images/avatar.png</logo>
     <icon>https://betaincao.github.io/favicon.ico</icon>
-    <rights>All rights reserved 2022, BetainCao</rights>
+    <rights>All rights reserved 2023, BetainCao</rights>
     <entry>
         <title type="html"><![CDATA[prometheus相关case记录]]></title>
         <id>https://betaincao.github.io/post/prometheus-xiang-guan-case-ji-lu/</id>
